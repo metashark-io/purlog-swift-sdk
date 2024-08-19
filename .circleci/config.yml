@@ -7,12 +7,12 @@ orbs:
 
 jobs:
   upload_to_codecov:
-    docker:
-      - image: circleci/ruby:2.7  # Use an appropriate Docker image for your project
+    macos:
+      xcode: "13.2.1"  # Choose the Xcode version that fits your needs
     steps:
       - checkout  # This pulls down your source code
       - run:
-          name: Install Specific Bundler Version
+          name: Install Bundler
           command: gem install bundler -v 2.4.22
       - run:
           name: Install Gems
