@@ -8,30 +8,48 @@
 import Foundation
 
 internal class KeychainWrapper {
-    func save(key: String, value: String) {
-        let data = value.data(using: .utf8)!
-        let query = [
-            kSecClass: kSecClassGenericPassword,
-            kSecAttrAccount: key,
-            kSecValueData: data
-        ] as CFDictionary
-        SecItemAdd(query, nil)
+    
+    static let shared = KeychainWrapper()
+    
+    func save(token: String, forKey key: String) -> OSStatus {
+        let data = Data(token.utf8)
+        
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: key,
+            kSecValueData as String: data
+        ]
+        
+        SecItemDelete(query as CFDictionary)
+        
+        // Add the new item
+        return SecItemAdd(query as CFDictionary, nil)
     }
     
-    func get(key: String) -> String? {
-        let query = [
-            kSecClass: kSecClassGenericPassword,
-            kSecAttrAccount: key,
-            kSecReturnData: true,
-            kSecMatchLimit: kSecMatchLimitOne
-        ] as CFDictionary
+    func get(forKey key: String) -> (String?, OSStatus) {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: key,
+            kSecReturnData as String: kCFBooleanTrue!,
+            kSecMatchLimit as String: kSecMatchLimitOne
+        ]
         
         var dataTypeRef: AnyObject? = nil
-        let status = SecItemCopyMatching(query, &dataTypeRef)
+        let status: OSStatus = SecItemCopyMatching(query as CFDictionary, &dataTypeRef)
         
+        var token: String? = nil
         if status == errSecSuccess, let data = dataTypeRef as? Data {
-            return String(data: data, encoding: .utf8)
+            token = String(data: data, encoding: .utf8)
         }
-        return nil
+        return (token, status)
+    }
+    
+    func delete(forKey key: String) -> OSStatus {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: key
+        ]
+        
+        return SecItemDelete(query as CFDictionary)
     }
 }

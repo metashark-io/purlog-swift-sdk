@@ -37,11 +37,11 @@ public struct PurLogColorConfig {
     }
     
     public func getTextColor(for level: PurLogLevel) -> String {
-        return textColorMapping[level] ?? PurLogTextColor.WHITE.rawValue  // Default to white if color not set
+        return textColorMapping[level]!
     }
     
     public func getBackgroundColor(for level: PurLogLevel) -> String? {
-        return backgroundColorMapping[level] ?? nil // Default to transparent if color not set
+        return backgroundColorMapping[level]! // this non-optional assertion still returns a `String?` type since it was a `String??`
     }
     
     public class Builder {

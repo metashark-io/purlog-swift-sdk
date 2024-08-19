@@ -8,7 +8,7 @@
 import XCTest
 @testable import PurLog
 
-final class PurLogTests: XCTestCase {
+internal final class PurLogTests: XCTestCase {
     func testAlwaysPasses() {
             // This is a dummy test that will always pass.
             XCTAssertTrue(true)

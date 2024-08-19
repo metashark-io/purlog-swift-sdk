@@ -24,11 +24,11 @@ public class PurLog {
         
         consoleLog(message, level: level)
         
-        /*if let credentials = config.credentials {
+        if let credentials = config.credentials {
             Task {
                 await asyncLog()
             }
-        }*/
+        }
     }
     
     private func shouldLog(for level: PurLogLevel) -> Bool {
@@ -53,11 +53,11 @@ public class PurLog {
         print(formattedMessage)
     }
     
-    /*private func asyncLog() async {
+    private func asyncLog() async {
         do {
             
         } catch {
             
         }
-    }*/
+    }
 }

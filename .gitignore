@@ -18,3 +18,6 @@ DerivedData/
 # Temporary files
 *.tmp
 *.temp
+
+# CodeCov
+html/

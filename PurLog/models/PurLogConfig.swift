@@ -11,20 +11,20 @@ public struct PurLogConfig {
     let level: PurLogLevel
     let env: PurLogEnv
     let colorConfig: PurLogColorConfig
-    //let credentials: PurLogCredentials?
+    let credentials: PurLogCredentials?
     
     init(level: PurLogLevel = .VERBOSE, env: PurLogEnv = .DEV, credentials: PurLogCredentials? = nil) {
         self.level = level
         self.env = env
         self.colorConfig = PurLogColorConfig()
-        //self.credentials = credentials
+        self.credentials = credentials
     }
     
     public class Builder {
         private var level: PurLogLevel = .VERBOSE
         private var env: PurLogEnv = .DEV
         private var colorConfig = PurLogColorConfig()
-        //private var credentials: PurLogCredentials?
+        private var credentials: PurLogCredentials?
         
         public init() {}
         
@@ -43,13 +43,13 @@ public struct PurLogConfig {
             return self
         }
         
-        /*public func setCredentials(clientId: String, token: String) -> Builder {
+        public func setCredentials(clientId: String, token: String) -> Builder {
             self.credentials = PurLogCredentials(clientId: clientId, token: token)
             return self
-        }*/
+        }
         
         public func build() -> PurLogConfig {
-            return PurLogConfig(level: level, env: env/*, credentials: credentials*/)
+            return PurLogConfig(level: level, env: env, credentials: credentials)
         }
     }
 }

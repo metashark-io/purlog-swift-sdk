@@ -1,0 +1,9 @@
+# .slather.yml
+
+coverage_service: cobertura_xml
+xcodeproj: PurLog.xcodeproj
+scheme: PurLog
+source_directory: PurLog
+output_directory: test_report
+ignore:
+    - /PurLogTests/*

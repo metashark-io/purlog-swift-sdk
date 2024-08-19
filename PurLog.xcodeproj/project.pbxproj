@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F412F1F2C74037300A9C41E /* MockKeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F412F1E2C74037300A9C41E /* MockKeychainWrapper.swift */; };
+		5F70EAFB2C73D80000917C4F /* PurLogCredentialsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F70EAFA2C73D80000917C4F /* PurLogCredentialsTests.swift */; };
 		5FF2FC5D2C72B97900917679 /* PurLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF2FC522C72B97900917679 /* PurLog.framework */; };
 		5FF2FC622C72B97900917679 /* PurLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC612C72B97900917679 /* PurLogTests.swift */; };
 		5FF2FC6F2C72BB2600917679 /* PurLogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC6E2C72BB2600917679 /* PurLogLevel.swift */; };
@@ -19,6 +21,11 @@
 		5FF2FC842C72FDD100917679 /* PurLogColorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC832C72FDD100917679 /* PurLogColorConfig.swift */; };
 		5FF2FC862C72FF0C00917679 /* PurLogTextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC852C72FF0C00917679 /* PurLogTextColor.swift */; };
 		5FF2FC892C7303EF00917679 /* PurLogBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC882C7303EF00917679 /* PurLogBackgroundColor.swift */; };
+		5FF2FC8D2C73189000917679 /* slather.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 5FF2FC8C2C73189000917679 /* slather.yaml */; };
+		5FF2FC962C7332D300917679 /* datesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC952C7332D300917679 /* datesTests.swift */; };
+		5FF2FCAA2C73C46400917679 /* PurLogColorConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FCA92C73C46400917679 /* PurLogColorConfigTests.swift */; };
+		5FF2FCAD2C73C48600917679 /* PurLogConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FCAC2C73C48600917679 /* PurLogConfigTests.swift */; };
+		5FF2FCB72C73CE4A00917679 /* KeychainHostTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FCB62C73CE4A00917679 /* KeychainHostTestApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,9 +36,18 @@
 			remoteGlobalIDString = 5FF2FC512C72B97900917679;
 			remoteInfo = PurLog;
 		};
+		5FF2FCC32C73CF0C00917679 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FF2FC492C72B97900917679 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FF2FCB32C73CE4A00917679;
+			remoteInfo = KeychainHostTestApp;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F412F1E2C74037300A9C41E /* MockKeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeychainWrapper.swift; sourceTree = "<group>"; };
+		5F70EAFA2C73D80000917C4F /* PurLogCredentialsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogCredentialsTests.swift; sourceTree = "<group>"; };
 		5FF2FC522C72B97900917679 /* PurLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PurLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF2FC5C2C72B97900917679 /* PurLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF2FC612C72B97900917679 /* PurLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogTests.swift; sourceTree = "<group>"; };
@@ -46,6 +62,13 @@
 		5FF2FC852C72FF0C00917679 /* PurLogTextColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogTextColor.swift; sourceTree = "<group>"; };
 		5FF2FC882C7303EF00917679 /* PurLogBackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogBackgroundColor.swift; sourceTree = "<group>"; };
 		5FF2FC8A2C730D5C00917679 /* package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = package.swift; sourceTree = "<group>"; };
+		5FF2FC8C2C73189000917679 /* slather.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = slather.yaml; sourceTree = "<group>"; };
+		5FF2FC942C732B4B00917679 /* PurLog.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = PurLog.xctestplan; sourceTree = SOURCE_ROOT; };
+		5FF2FC952C7332D300917679 /* datesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datesTests.swift; sourceTree = "<group>"; };
+		5FF2FCA92C73C46400917679 /* PurLogColorConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogColorConfigTests.swift; sourceTree = "<group>"; };
+		5FF2FCAC2C73C48600917679 /* PurLogConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogConfigTests.swift; sourceTree = "<group>"; };
+		5FF2FCB42C73CE4A00917679 /* KeychainHostTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeychainHostTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FF2FCB62C73CE4A00917679 /* KeychainHostTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHostTestApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,15 +87,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5FF2FCB12C73CE4A00917679 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F412F1D2C74035B00A9C41E /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				5FF2FC952C7332D300917679 /* datesTests.swift */,
+				5F412F1E2C74037300A9C41E /* MockKeychainWrapper.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		5F70EAF92C73D5FF00917C4F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		5FF2FC482C72B97900917679 = {
 			isa = PBXGroup;
 			children = (
+				5FF2FC8C2C73189000917679 /* slather.yaml */,
 				5FF2FC8A2C730D5C00917679 /* package.swift */,
 				5FF2FC542C72B97900917679 /* PurLog */,
 				5FF2FC602C72B97900917679 /* PurLogTests */,
+				5FF2FCB52C73CE4A00917679 /* KeychainHostTestApp */,
 				5FF2FC532C72B97900917679 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,6 +130,7 @@
 			children = (
 				5FF2FC522C72B97900917679 /* PurLog.framework */,
 				5FF2FC5C2C72B97900917679 /* PurLogTests.xctest */,
+				5FF2FCB42C73CE4A00917679 /* KeychainHostTestApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,7 +149,10 @@
 		5FF2FC602C72B97900917679 /* PurLogTests */ = {
 			isa = PBXGroup;
 			children = (
+				5FF2FC942C732B4B00917679 /* PurLog.xctestplan */,
 				5FF2FC612C72B97900917679 /* PurLogTests.swift */,
+				5FF2FCAB2C73C46D00917679 /* models */,
+				5F412F1D2C74035B00A9C41E /* utils */,
 			);
 			path = PurLogTests;
 			sourceTree = "<group>";
@@ -109,8 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				5FF2FC6E2C72BB2600917679 /* PurLogLevel.swift */,
-				5FF2FC872C7303D400917679 /* colors */,
 				5FF2FC772C72E78E00917679 /* PurLogEnv.swift */,
+				5FF2FC872C7303D400917679 /* colors */,
 			);
 			path = enums;
 			sourceTree = "<group>";
@@ -141,6 +193,25 @@
 				5FF2FC882C7303EF00917679 /* PurLogBackgroundColor.swift */,
 			);
 			path = colors;
+			sourceTree = "<group>";
+		};
+		5FF2FCAB2C73C46D00917679 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				5FF2FCAC2C73C48600917679 /* PurLogConfigTests.swift */,
+				5FF2FCA92C73C46400917679 /* PurLogColorConfigTests.swift */,
+				5F70EAFA2C73D80000917C4F /* PurLogCredentialsTests.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		5FF2FCB52C73CE4A00917679 /* KeychainHostTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				5F70EAF92C73D5FF00917C4F /* Preview Content */,
+				5FF2FCB62C73CE4A00917679 /* KeychainHostTestApp.swift */,
+			);
+			path = KeychainHostTestApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,11 +257,29 @@
 			);
 			dependencies = (
 				5FF2FC5F2C72B97900917679 /* PBXTargetDependency */,
+				5FF2FCC42C73CF0C00917679 /* PBXTargetDependency */,
 			);
 			name = PurLogTests;
 			productName = PurLogTests;
 			productReference = 5FF2FC5C2C72B97900917679 /* PurLogTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5FF2FCB32C73CE4A00917679 /* KeychainHostTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FF2FCBF2C73CE4C00917679 /* Build configuration list for PBXNativeTarget "KeychainHostTestApp" */;
+			buildPhases = (
+				5FF2FCB02C73CE4A00917679 /* Sources */,
+				5FF2FCB12C73CE4A00917679 /* Frameworks */,
+				5FF2FCB22C73CE4A00917679 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeychainHostTestApp;
+			productName = KeychainHostTestApp;
+			productReference = 5FF2FCB42C73CE4A00917679 /* KeychainHostTestApp.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -206,6 +295,10 @@
 						CreatedOnToolsVersion = 15.4;
 					};
 					5FF2FC5B2C72B97900917679 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 5FF2FCB32C73CE4A00917679;
+					};
+					5FF2FCB32C73CE4A00917679 = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
@@ -225,6 +318,7 @@
 			targets = (
 				5FF2FC512C72B97900917679 /* PurLog */,
 				5FF2FC5B2C72B97900917679 /* PurLogTests */,
+				5FF2FCB32C73CE4A00917679 /* KeychainHostTestApp */,
 			);
 		};
 /* End PBXProject section */
@@ -234,10 +328,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FF2FC8D2C73189000917679 /* slather.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5FF2FC5A2C72B97900917679 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FF2FCB22C73CE4A00917679 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -268,7 +370,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FF2FCAA2C73C46400917679 /* PurLogColorConfigTests.swift in Sources */,
+				5F70EAFB2C73D80000917C4F /* PurLogCredentialsTests.swift in Sources */,
+				5FF2FC962C7332D300917679 /* datesTests.swift in Sources */,
 				5FF2FC622C72B97900917679 /* PurLogTests.swift in Sources */,
+				5FF2FCAD2C73C48600917679 /* PurLogConfigTests.swift in Sources */,
+				5F412F1F2C74037300A9C41E /* MockKeychainWrapper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FF2FCB02C73CE4A00917679 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FF2FCB72C73CE4A00917679 /* KeychainHostTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +394,11 @@
 			isa = PBXTargetDependency;
 			target = 5FF2FC512C72B97900917679 /* PurLog */;
 			targetProxy = 5FF2FC5E2C72B97900917679 /* PBXContainerItemProxy */;
+		};
+		5FF2FCC42C73CF0C00917679 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FF2FCB32C73CE4A00917679 /* KeychainHostTestApp */;
+			targetProxy = 5FF2FCC32C73CF0C00917679 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -492,6 +612,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeychainHostTestApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KeychainHostTestApp";
 			};
 			name = Debug;
 		};
@@ -507,6 +628,67 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.metashark.PurLogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeychainHostTestApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KeychainHostTestApp";
+			};
+			name = Release;
+		};
+		5FF2FCC02C73CE4C00917679 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KeychainHostTestApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 2CX2A263X7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.metashark.KeychainHostTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5FF2FCC12C73CE4C00917679 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KeychainHostTestApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 2CX2A263X7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.metashark.KeychainHostTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -538,6 +720,15 @@
 			buildConfigurations = (
 				5FF2FC6A2C72B97900917679 /* Debug */,
 				5FF2FC6B2C72B97900917679 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FF2FCBF2C73CE4C00917679 /* Build configuration list for PBXNativeTarget "KeychainHostTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FF2FCC02C73CE4C00917679 /* Debug */,
+				5FF2FCC12C73CE4C00917679 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
