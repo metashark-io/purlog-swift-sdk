@@ -20,7 +20,7 @@ jobs:
       - run:
           name: Run Slather
           command: |
-            bundle exec slather
+            bundle exec slather coverage --scheme PurLog PurLog.xcodeproj
             bash <(curl -s https://codecov.io/bash) -f test_report/cobertura.xml -X coveragepy -X gcov -X xcode
       - codecov/upload  # Upload the coverage report to Codecov
 
