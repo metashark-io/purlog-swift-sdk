@@ -54,10 +54,11 @@ public class PurLog {
     }
     
     private func asyncLog() async {
-        do {
+        // TODO
+        /*do {
             
         } catch {
             
-        }
+        }*/
     }
 }
