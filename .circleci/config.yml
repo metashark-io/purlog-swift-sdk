@@ -12,8 +12,8 @@ jobs:
     steps:
       - checkout  # This pulls down your source code
       - run:
-          name: Install Bundler
-          command: gem install bundler
+          name: Install Specific Bundler Version
+          command: gem install bundler -v 2.4.22
       - run:
           name: Install Gems
           command: bundle install
