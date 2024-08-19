@@ -1,0 +1,20 @@
+# Xcode
+.DS_Store
+build/
+DerivedData/
+
+*.xcworkspace
+*.xcuserstate
+*.xcuserdatad/
+*.xcuserdata/
+*.xcdebugger/
+*.xcodeproj/xcshareddata/
+
+# Logs
+*.log
+*.xcactivitylog
+*.crash
+
+# Temporary files
+*.tmp
+*.temp
