@@ -8,7 +8,8 @@ orbs:
 jobs:
   upload_to_codecov:
     macos:
-      xcode: "13.2.1"  # Choose the Xcode version that fits your needs
+      xcode: "13.2.1"  # Specify the Xcode version
+      resource_class: macos.x86.medium  # Use a valid macOS resource class
     steps:
       - checkout  # This pulls down your source code
       - run:
