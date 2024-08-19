@@ -10,7 +10,13 @@ jobs:
     docker:
       - image: circleci/ruby:2.7  # Use an appropriate Docker image for your project
     steps:
-      - checkout  # This is a command, not a job
+      - checkout  # This pulls down your source code
+      - run:
+          name: Install Bundler
+          command: gem install bundler
+      - run:
+          name: Install Gems
+          command: bundle install
       - run:
           name: Run Slather
           command: |
