@@ -4,13 +4,21 @@ version: 2.1
 
 orbs:
   codecov: codecov/codecov@4.0.1
+
+jobs:
+  upload_to_codecov:
+    docker:
+      - image: circleci/ruby:2.7  # Use an appropriate Docker image for your project
+    steps:
+      - checkout  # This is a command, not a job
+      - run:
+          name: Run Slather
+          command: |
+            bundle exec slather
+            bash <(curl -s https://codecov.io/bash) -f test_report/cobertura.xml -X coveragepy -X gcov -X xcode
+      - codecov/upload  # Upload the coverage report to Codecov
+
 workflows:
   upload-to-codecov:
     jobs:
-      - checkout
-      - codecov/upload
-      
-test:
-  post:
-    - bundle exec slather
-    - bash <(curl -s https://codecov.io/bash) -f test_report/cobertura.xml -X coveragepy -X gcov -X xcode
+      - upload_to_codecov
