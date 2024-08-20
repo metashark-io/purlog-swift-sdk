@@ -8,13 +8,13 @@ orbs:
 jobs:
   build-and-test:
     macos:
-      xcode: "14.3.0" # Specify the Xcode version you are using
+      xcode: "15.4.0" # Specify the Xcode version you are using
     environment:
       # Define any environment variables you might need
       XCODE_SCHEME: "PurLog"
       XCODE_PROJECT: "PurLog.xcodeproj"
       XCODE_SDK: "iphonesimulator"
-      XCODE_DESTINATION: "platform=iOS Simulator,OS=16.4,name=iPhone 14"
+      XCODE_DESTINATION: "platform=iOS Simulator,OS=17.5,name=iPhone 15"
     steps:
       - checkout
 
