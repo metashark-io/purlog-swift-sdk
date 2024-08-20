@@ -42,9 +42,6 @@ jobs:
 
       - codecov/upload:
           file: "test_report/cobertura.xml"
-          flags: ios
-          env:
-            - XCODE_SCHEME
 
 workflows:
   version: 2
