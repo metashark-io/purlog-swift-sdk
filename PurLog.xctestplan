@@ -9,7 +9,15 @@
     }
   ],
   "defaultOptions" : {
-
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:PurLog.xcodeproj",
+          "identifier" : "5FF2FC512C72B97900917679",
+          "name" : "PurLog"
+        }
+      ]
+    }
   },
   "testTargets" : [
 
