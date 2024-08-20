@@ -18,13 +18,6 @@ jobs:
           name: Install Gems
           command: bundle install
       - run:
-<<<<<<< Updated upstream
-          name: Run Slather
-          command: |
-            bundle exec slather coverage --scheme PurLog PurLog.xcodeproj
-            bash <(curl -s https://codecov.io/bash) -f test_report/cobertura.xml -X coveragepy -X gcov -X xcode
-      - codecov/upload  # Upload the coverage report to Codecov
-=======
           name: Build and Test
           command: |
             xcodebuild test \
@@ -33,17 +26,12 @@ jobs:
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest' \
             -enableCodeCoverage YES
-      - post:
-          - run:
-              name: Run Slather
-              command: |
-                bundle exec slather coverage --binary-basename PurLog --scheme PurLog PurLog.xcodeproj
-          - run:
-              name: Run CodeCov
-              command: |
-                bash <(curl -s https://codecov.io/bash) -f test_report/cobertura.xml -X coveragepy -X gcov -X xcode
-          - codecov/upload  # Upload the coverage report to Codecov
->>>>>>> Stashed changes
+      - run:
+          name: Run Slather
+          command: |
+            bundle exec slather coverage --scheme PurLog PurLog.xcodeproj
+            bash <(curl -s https://codecov.io/bash) -f test_report/cobertura.xml -X coveragepy -X gcov -X xcode
+      - codecov/upload  # Upload the coverage report to Codecov
 
 workflows:
   upload-to-codecov:
