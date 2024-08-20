@@ -33,6 +33,7 @@ jobs:
               -sdk "$XCODE_SDK" \
               -destination "$XCODE_DESTINATION" \
               -enableCodeCoverage YES | xcpretty --test --color
+              -testPlan "PurLog" | xcpretty --test --color
 
       - store_artifacts:
           path: ~/Library/Developer/Xcode/DerivedData
