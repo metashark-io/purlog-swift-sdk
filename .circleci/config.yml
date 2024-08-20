@@ -22,6 +22,7 @@ jobs:
           command: |
             xcodebuild test \
             -project PurLog.xcodeproj \
+            -configuration Debug \
             -scheme PurLog \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest' \
@@ -29,7 +30,7 @@ jobs:
       - run:
           name: Run Slather
           command: |
-            bundle exec slather coverage --scheme PurLog PurLog.xcodeproj
+            bundle exec slather coverage --configuration Debug --scheme PurLog PurLog.xcodeproj
             bash <(curl -s https://codecov.io/bash) -f test_report/cobertura.xml -X coveragepy -X gcov -X xcode
       - codecov/upload  # Upload the coverage report to Codecov
 
