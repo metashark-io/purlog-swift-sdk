@@ -3,7 +3,7 @@
 version: 2.1
 
 orbs:
-  macos: circleci/macos@3.0.1
+  macos: circleci/macos@2
 
 jobs:
   build-and-test:
