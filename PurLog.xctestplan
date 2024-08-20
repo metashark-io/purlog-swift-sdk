@@ -1,7 +1,7 @@
 {
   "configurations" : [
     {
-      "id" : "27834330-C217-4EFD-8B57-023587D7CBC1",
+      "id" : "67B0B103-98BB-410B-97CB-F313B8BFB4F8",
       "name" : "Configuration 1",
       "options" : {
 
@@ -9,18 +9,16 @@
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : {
-      "targets" : [
-        {
-          "containerPath" : "container:PurLog.xcodeproj",
-          "identifier" : "5FF2FC512C72B97900917679",
-          "name" : "PurLog"
-        }
-      ]
-    }
+
   },
   "testTargets" : [
-
+    {
+      "target" : {
+        "containerPath" : "container:PurLog.xcodeproj",
+        "identifier" : "5FF2FC5B2C72B97900917679",
+        "name" : "PurLogTests"
+      }
+    }
   ],
   "version" : 1
 }

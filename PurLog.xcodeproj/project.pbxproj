@@ -47,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		5F412F1E2C74037300A9C41E /* MockKeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeychainWrapper.swift; sourceTree = "<group>"; };
+		5F412F212C741C5800A9C41E /* PurLog.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = PurLog.xctestplan; sourceTree = "<group>"; };
 		5F70EAFA2C73D80000917C4F /* PurLogCredentialsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogCredentialsTests.swift; sourceTree = "<group>"; };
 		5FF2FC522C72B97900917679 /* PurLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PurLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF2FC5C2C72B97900917679 /* PurLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,7 +64,6 @@
 		5FF2FC882C7303EF00917679 /* PurLogBackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogBackgroundColor.swift; sourceTree = "<group>"; };
 		5FF2FC8A2C730D5C00917679 /* package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = package.swift; sourceTree = "<group>"; };
 		5FF2FC8C2C73189000917679 /* slather.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = slather.yaml; sourceTree = "<group>"; };
-		5FF2FC942C732B4B00917679 /* PurLog.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = PurLog.xctestplan; sourceTree = SOURCE_ROOT; };
 		5FF2FC952C7332D300917679 /* datesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datesTests.swift; sourceTree = "<group>"; };
 		5FF2FCA92C73C46400917679 /* PurLogColorConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogColorConfigTests.swift; sourceTree = "<group>"; };
 		5FF2FCAC2C73C48600917679 /* PurLogConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogConfigTests.swift; sourceTree = "<group>"; };
@@ -116,6 +116,7 @@
 		5FF2FC482C72B97900917679 = {
 			isa = PBXGroup;
 			children = (
+				5F412F212C741C5800A9C41E /* PurLog.xctestplan */,
 				5FF2FC8C2C73189000917679 /* slather.yaml */,
 				5FF2FC8A2C730D5C00917679 /* package.swift */,
 				5FF2FC542C72B97900917679 /* PurLog */,
@@ -149,7 +150,6 @@
 		5FF2FC602C72B97900917679 /* PurLogTests */ = {
 			isa = PBXGroup;
 			children = (
-				5FF2FC942C732B4B00917679 /* PurLog.xctestplan */,
 				5FF2FC612C72B97900917679 /* PurLogTests.swift */,
 				5FF2FCAB2C73C46D00917679 /* models */,
 				5F412F1D2C74035B00A9C41E /* utils */,
