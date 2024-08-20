@@ -4,6 +4,7 @@ version: 2.1
 
 orbs:
   macos: circleci/macos@2
+  codecov: codecov/codecov@4.0.1
 
 jobs:
   build-and-test:
@@ -34,12 +35,16 @@ jobs:
               -destination "$XCODE_DESTINATION" \
               -enableCodeCoverage YES | xcpretty --test --color
 
-      - store_artifacts:
-          path: ~/Library/Developer/Xcode/DerivedData
-          destination: derived_data
+      - run:
+          name: Run Slather Coverage
+          command: |
+            bundle exec slather coverage --scheme "$XCODE_SCHEME" "$XCODE_PROJECT"
 
-      - store_test_results:
-          path: ~/Library/Developer/Xcode/DerivedData
+      - codecov/upload:
+          file: "test_report/cobertura.xml"
+          flags: ios
+          env:
+            - XCODE_SCHEME
 
 workflows:
   version: 2
