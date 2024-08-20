@@ -26,6 +26,7 @@
 		5FF2FCAA2C73C46400917679 /* PurLogColorConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FCA92C73C46400917679 /* PurLogColorConfigTests.swift */; };
 		5FF2FCAD2C73C48600917679 /* PurLogConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FCAC2C73C48600917679 /* PurLogConfigTests.swift */; };
 		5FF2FCB72C73CE4A00917679 /* KeychainHostTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FCB62C73CE4A00917679 /* KeychainHostTestApp.swift */; };
+		5FF4012E2C75459E00E50045 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FF4012D2C75459E00E50045 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		5FF2FCB42C73CE4A00917679 /* KeychainHostTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeychainHostTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF2FCB62C73CE4A00917679 /* KeychainHostTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHostTestApp.swift; sourceTree = "<group>"; };
 		5FF4012B2C753E4D00E50045 /* PurLog.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = PurLog.xctestplan; sourceTree = "<group>"; };
+		5FF4012D2C75459E00E50045 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,13 +106,6 @@
 				5F412F1E2C74037300A9C41E /* MockKeychainWrapper.swift */,
 			);
 			path = utils;
-			sourceTree = "<group>";
-		};
-		5F70EAF92C73D5FF00917C4F /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		5FF2FC482C72B97900917679 = {
@@ -208,10 +203,18 @@
 		5FF2FCB52C73CE4A00917679 /* KeychainHostTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				5F70EAF92C73D5FF00917C4F /* Preview Content */,
+				5FF4012C2C75437C00E50045 /* Preview Content */,
 				5FF2FCB62C73CE4A00917679 /* KeychainHostTestApp.swift */,
 			);
 			path = KeychainHostTestApp;
+			sourceTree = "<group>";
+		};
+		5FF4012C2C75437C00E50045 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5FF4012D2C75459E00E50045 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FF4012E2C75459E00E50045 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
