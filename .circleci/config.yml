@@ -16,7 +16,7 @@ jobs:
           platform: "iOS"
           device: "iPhone 15"
       - checkout  # This pulls down your source code
-       - run:
+      - run:
           name: Set Project Path
           command: echo "PROJECT_DIR=$(pwd)" >> $BASH_ENV
       - run:
