@@ -19,10 +19,10 @@ jobs:
       - checkout
 
       - run:
-          name: Install Dependencies
+          name: Install Gems
           command: |
-            brew install cocoapods # Only if you are using CocoaPods
-            pod install # Only if you are using CocoaPods
+            gem install bundler
+            bundle install
 
       - run:
           name: Build and Test
