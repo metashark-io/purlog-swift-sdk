@@ -39,9 +39,10 @@ jobs:
           name: Run Slather Coverage
           command: |
             bundle exec slather coverage --scheme "$XCODE_SCHEME" "$XCODE_PROJECT"
-
-      - codecov/upload:
-          file: "test_report/cobertura.xml"
+      - run:
+          name: Codecov Upload
+          command: |
+            bash <(curl -s https://codecov.io/bash) -f test_report/cobertura.xml -X coveragepy -X gcov -X xcode -t $CODECOV_TOKEN
 
 workflows:
   version: 2
