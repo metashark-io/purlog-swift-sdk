@@ -12,9 +12,9 @@ jobs:
       xcode: "15.4.0"  # Choose the Xcode version that fits your needs
     steps:
       - macos/preboot-simulator:
-          version: "15.0"
+          version: "17.5"
           platform: "iOS"
-          device: "iPhone 13 Pro Max"
+          device: "iPhone 15"
       - checkout  # This pulls down your source code
       - run:
           name: Install Bundler
@@ -32,7 +32,7 @@ jobs:
             -project PurLog.xcodeproj \
             -scheme PurLog \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max,OS=15.0' \
+            -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.5' \
             -enableCodeCoverage YES
       - run:
           name: Run Slather
