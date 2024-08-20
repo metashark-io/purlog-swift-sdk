@@ -15,9 +15,9 @@ jobs:
           name: List Available Simulators
           command: xcrun simctl list devices
       - macos/preboot-simulator:
-          version: "latest"
+          version: "17.5"
           platform: "iOS"
-          device: "iPhone 15"
+          device: "iPhone 15 Pro"
       - checkout  # This pulls down your source code
       - run:
           name: Set Project Path
@@ -39,7 +39,7 @@ jobs:
               -project PurLog.xcodeproj \
               -scheme PurLog \
               -sdk iphonesimulator \
-              -destination 'platform=iOS Simulator,name=iPhone 15,OS=latest' \
+              -destination 'platform=iOS Simulator,name=iPhone 15 Pro,OS=17.5' \
               -enableCodeCoverage YES
       - run:
           name: Run Slather
