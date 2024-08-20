@@ -18,11 +18,6 @@ jobs:
     steps:
       - checkout
 
-      - macos/setup_simulator:
-          platform: "iOS"
-          version: "16.4"
-          device: "iPhone 14"
-
       - run:
           name: Install Dependencies
           command: |
