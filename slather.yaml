@@ -3,6 +3,7 @@
 coverage_service: cobertura_xml
 xcodeproj: PurLog.xcodeproj
 scheme: PurLog
+configuration: Debug
 source_directory: PurLog
 output_directory: test_report
 ignore:
