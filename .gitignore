@@ -5,10 +5,7 @@ DerivedData/
 
 *.xcworkspace
 *.xcuserstate
-*.xcuserdatad/
-*.xcuserdata/
 *.xcdebugger/
-*.xcodeproj/xcshareddata/
 
 # Logs
 *.log
