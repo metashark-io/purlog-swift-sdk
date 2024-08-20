@@ -16,5 +16,6 @@ DerivedData/
 *.tmp
 *.temp
 
-# CodeCov
+# Slather
 html/
+test_report/

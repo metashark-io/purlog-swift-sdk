@@ -38,7 +38,7 @@ jobs:
       - run:
           name: Run Slather Coverage
           command: |
-            bundle exec slather coverage --scheme "$XCODE_SCHEME" "$XCODE_PROJECT"
+            bundle exec slather coverage -x --output-directory test_report --scheme "$XCODE_SCHEME" "$XCODE_PROJECT"
       - run:
           name: Codecov Upload
           command: |
