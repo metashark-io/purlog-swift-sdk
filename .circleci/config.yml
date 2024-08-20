@@ -11,8 +11,11 @@ jobs:
     macos:
       xcode: "15.4.0"  # Choose the Xcode version that fits your needs
     steps:
+      - run:
+          name: List Available Simulators
+          command: xcrun simctl list devices
       - macos/preboot-simulator:
-          version: "17.5"
+          version: "latest"
           platform: "iOS"
           device: "iPhone 15"
       - checkout  # This pulls down your source code
@@ -36,7 +39,7 @@ jobs:
               -project PurLog.xcodeproj \
               -scheme PurLog \
               -sdk iphonesimulator \
-              -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.5' \
+              -destination 'platform=iOS Simulator,name=iPhone 15,OS=latest' \
               -enableCodeCoverage YES
       - run:
           name: Run Slather
