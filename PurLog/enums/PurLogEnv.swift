@@ -10,5 +10,8 @@ import Foundation
 /// the environment for `PurLog`
 public enum PurLogEnv: String {
     case DEV
+    case PR
+    case QA
+    case STAGING
     case PROD
 }

@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F19D8BF2C94475D00565DE9 /* logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F19D8BE2C94475D00565DE9 /* logs.swift */; };
+		5F19D8C22C9448D400565DE9 /* loggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F19D8C12C9448D400565DE9 /* loggerTests.swift */; };
+		5F19D8C62C95622600565DE9 /* sessionTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F19D8C52C95622600565DE9 /* sessionTokens.swift */; };
+		5F19D8C92C9564D200565DE9 /* PurLogError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F19D8C82C9564D200565DE9 /* PurLogError.swift */; };
+		5F19D8CB2C95660A00565DE9 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F19D8CA2C95660A00565DE9 /* KeychainWrapper.swift */; };
+		5F19D8CD2C95742900565DE9 /* jwt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F19D8CC2C95742900565DE9 /* jwt.swift */; };
+		5F19D8CF2C9574AA00565DE9 /* TokenStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F19D8CE2C9574AA00565DE9 /* TokenStatus.swift */; };
+		5F1AA1812C943385002667D1 /* PurLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1AA1802C943385002667D1 /* PurLogTests.swift */; };
+		5F1AA1832C9435A9002667D1 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1AA1822C9435A9002667D1 /* MockURLSession.swift */; };
+		5F1AA1852C9439D5002667D1 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1AA1842C9439D5002667D1 /* URLSession.swift */; };
 		5F412F1F2C74037300A9C41E /* MockKeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F412F1E2C74037300A9C41E /* MockKeychainWrapper.swift */; };
-		5F70EAFB2C73D80000917C4F /* PurLogCredentialsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F70EAFA2C73D80000917C4F /* PurLogCredentialsTests.swift */; };
+		5F70EAFB2C73D80000917C4F /* PurLogProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F70EAFA2C73D80000917C4F /* PurLogProjectTests.swift */; };
+		5F7A14532C95F220004607D7 /* PurLogProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A14522C95F220004607D7 /* PurLogProject.swift */; };
+		5F7A14552C960376004607D7 /* SdkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A14542C960376004607D7 /* SdkLogger.swift */; };
+		5F7A14642C969B5A004607D7 /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A14632C969B5A004607D7 /* logging.swift */; };
 		5FF2FC5D2C72B97900917679 /* PurLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF2FC522C72B97900917679 /* PurLog.framework */; };
-		5FF2FC622C72B97900917679 /* PurLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC612C72B97900917679 /* PurLogTests.swift */; };
 		5FF2FC6F2C72BB2600917679 /* PurLogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC6E2C72BB2600917679 /* PurLogLevel.swift */; };
 		5FF2FC712C72BB8A00917679 /* PurLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC702C72BB8A00917679 /* PurLog.swift */; };
 		5FF2FC752C72E6FB00917679 /* PurLogConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC742C72E6FB00917679 /* PurLogConfig.swift */; };
 		5FF2FC782C72E78E00917679 /* PurLogEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC772C72E78E00917679 /* PurLogEnv.swift */; };
-		5FF2FC7C2C72EA3900917679 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC7B2C72EA3900917679 /* KeychainWrapper.swift */; };
-		5FF2FC802C72F5F500917679 /* PurLogCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC7F2C72F5F500917679 /* PurLogCredentials.swift */; };
 		5FF2FC822C72F89800917679 /* dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC812C72F89800917679 /* dates.swift */; };
-		5FF2FC842C72FDD100917679 /* PurLogColorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC832C72FDD100917679 /* PurLogColorConfig.swift */; };
-		5FF2FC862C72FF0C00917679 /* PurLogTextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC852C72FF0C00917679 /* PurLogTextColor.swift */; };
-		5FF2FC892C7303EF00917679 /* PurLogBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC882C7303EF00917679 /* PurLogBackgroundColor.swift */; };
 		5FF2FC8D2C73189000917679 /* slather.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 5FF2FC8C2C73189000917679 /* slather.yaml */; };
 		5FF2FC962C7332D300917679 /* datesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC952C7332D300917679 /* datesTests.swift */; };
-		5FF2FCAA2C73C46400917679 /* PurLogColorConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FCA92C73C46400917679 /* PurLogColorConfigTests.swift */; };
 		5FF2FCAD2C73C48600917679 /* PurLogConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FCAC2C73C48600917679 /* PurLogConfigTests.swift */; };
 		5FF2FCB72C73CE4A00917679 /* KeychainHostTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FCB62C73CE4A00917679 /* KeychainHostTestApp.swift */; };
 /* End PBXBuildFile section */
@@ -46,25 +52,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F19D8BE2C94475D00565DE9 /* logs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logs.swift; sourceTree = "<group>"; };
+		5F19D8C12C9448D400565DE9 /* loggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loggerTests.swift; sourceTree = "<group>"; };
+		5F19D8C52C95622600565DE9 /* sessionTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sessionTokens.swift; sourceTree = "<group>"; };
+		5F19D8C82C9564D200565DE9 /* PurLogError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogError.swift; sourceTree = "<group>"; };
+		5F19D8CA2C95660A00565DE9 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		5F19D8CC2C95742900565DE9 /* jwt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jwt.swift; sourceTree = "<group>"; };
+		5F19D8CE2C9574AA00565DE9 /* TokenStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStatus.swift; sourceTree = "<group>"; };
+		5F1AA1802C943385002667D1 /* PurLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogTests.swift; sourceTree = "<group>"; };
+		5F1AA1822C9435A9002667D1 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		5F1AA1842C9439D5002667D1 /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
 		5F412F1E2C74037300A9C41E /* MockKeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeychainWrapper.swift; sourceTree = "<group>"; };
-		5F70EAFA2C73D80000917C4F /* PurLogCredentialsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogCredentialsTests.swift; sourceTree = "<group>"; };
+		5F70EAFA2C73D80000917C4F /* PurLogProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogProjectTests.swift; sourceTree = "<group>"; };
+		5F7A14522C95F220004607D7 /* PurLogProject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurLogProject.swift; sourceTree = "<group>"; };
+		5F7A14542C960376004607D7 /* SdkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SdkLogger.swift; sourceTree = "<group>"; };
+		5F7A14632C969B5A004607D7 /* logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logging.swift; sourceTree = "<group>"; };
 		5FF2FC522C72B97900917679 /* PurLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PurLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF2FC5C2C72B97900917679 /* PurLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FF2FC612C72B97900917679 /* PurLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogTests.swift; sourceTree = "<group>"; };
 		5FF2FC6E2C72BB2600917679 /* PurLogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurLogLevel.swift; sourceTree = "<group>"; };
 		5FF2FC702C72BB8A00917679 /* PurLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLog.swift; sourceTree = "<group>"; };
 		5FF2FC742C72E6FB00917679 /* PurLogConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogConfig.swift; sourceTree = "<group>"; };
 		5FF2FC772C72E78E00917679 /* PurLogEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogEnv.swift; sourceTree = "<group>"; };
-		5FF2FC7B2C72EA3900917679 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
-		5FF2FC7F2C72F5F500917679 /* PurLogCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogCredentials.swift; sourceTree = "<group>"; };
 		5FF2FC812C72F89800917679 /* dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dates.swift; sourceTree = "<group>"; };
-		5FF2FC832C72FDD100917679 /* PurLogColorConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogColorConfig.swift; sourceTree = "<group>"; };
-		5FF2FC852C72FF0C00917679 /* PurLogTextColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogTextColor.swift; sourceTree = "<group>"; };
-		5FF2FC882C7303EF00917679 /* PurLogBackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogBackgroundColor.swift; sourceTree = "<group>"; };
 		5FF2FC8A2C730D5C00917679 /* package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = package.swift; sourceTree = "<group>"; };
 		5FF2FC8C2C73189000917679 /* slather.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = slather.yaml; sourceTree = "<group>"; };
 		5FF2FC952C7332D300917679 /* datesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datesTests.swift; sourceTree = "<group>"; };
-		5FF2FCA92C73C46400917679 /* PurLogColorConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogColorConfigTests.swift; sourceTree = "<group>"; };
 		5FF2FCAC2C73C48600917679 /* PurLogConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogConfigTests.swift; sourceTree = "<group>"; };
 		5FF2FCB42C73CE4A00917679 /* KeychainHostTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeychainHostTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF2FCB62C73CE4A00917679 /* KeychainHostTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHostTestApp.swift; sourceTree = "<group>"; };
@@ -97,13 +109,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F19D8C72C95639100565DE9 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				5F7A14652C969BAF004607D7 /* api */,
+				5F7A14542C960376004607D7 /* SdkLogger.swift */,
+				5F19D8C82C9564D200565DE9 /* PurLogError.swift */,
+				5F19D8CA2C95660A00565DE9 /* KeychainWrapper.swift */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
 		5F412F1D2C74035B00A9C41E /* utils */ = {
 			isa = PBXGroup;
 			children = (
 				5FF2FC952C7332D300917679 /* datesTests.swift */,
 				5F412F1E2C74037300A9C41E /* MockKeychainWrapper.swift */,
+				5F1AA1822C9435A9002667D1 /* MockURLSession.swift */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		5F7A14652C969BAF004607D7 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				5F19D8BE2C94475D00565DE9 /* logs.swift */,
+				5F19D8C52C95622600565DE9 /* sessionTokens.swift */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 		5FF2FC482C72B97900917679 = {
@@ -133,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				5FF2FC702C72BB8A00917679 /* PurLog.swift */,
+				5F19D8C72C95639100565DE9 /* core */,
 				5FF2FC7A2C72E9E900917679 /* models */,
 				5FF2FC762C72E72D00917679 /* enums */,
 				5FF2FC792C72E9BE00917679 /* utils */,
@@ -143,7 +177,8 @@
 		5FF2FC602C72B97900917679 /* PurLogTests */ = {
 			isa = PBXGroup;
 			children = (
-				5FF2FC612C72B97900917679 /* PurLogTests.swift */,
+				5F1AA1802C943385002667D1 /* PurLogTests.swift */,
+				5F19D8C12C9448D400565DE9 /* loggerTests.swift */,
 				5FF2FCAB2C73C46D00917679 /* models */,
 				5F412F1D2C74035B00A9C41E /* utils */,
 			);
@@ -155,7 +190,7 @@
 			children = (
 				5FF2FC6E2C72BB2600917679 /* PurLogLevel.swift */,
 				5FF2FC772C72E78E00917679 /* PurLogEnv.swift */,
-				5FF2FC872C7303D400917679 /* colors */,
+				5F19D8CE2C9574AA00565DE9 /* TokenStatus.swift */,
 			);
 			path = enums;
 			sourceTree = "<group>";
@@ -163,8 +198,10 @@
 		5FF2FC792C72E9BE00917679 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				5FF2FC7B2C72EA3900917679 /* KeychainWrapper.swift */,
+				5F1AA1842C9439D5002667D1 /* URLSession.swift */,
 				5FF2FC812C72F89800917679 /* dates.swift */,
+				5F19D8CC2C95742900565DE9 /* jwt.swift */,
+				5F7A14632C969B5A004607D7 /* logging.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -172,28 +209,17 @@
 		5FF2FC7A2C72E9E900917679 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				5F7A14522C95F220004607D7 /* PurLogProject.swift */,
 				5FF2FC742C72E6FB00917679 /* PurLogConfig.swift */,
-				5FF2FC7F2C72F5F500917679 /* PurLogCredentials.swift */,
-				5FF2FC832C72FDD100917679 /* PurLogColorConfig.swift */,
 			);
 			path = models;
-			sourceTree = "<group>";
-		};
-		5FF2FC872C7303D400917679 /* colors */ = {
-			isa = PBXGroup;
-			children = (
-				5FF2FC852C72FF0C00917679 /* PurLogTextColor.swift */,
-				5FF2FC882C7303EF00917679 /* PurLogBackgroundColor.swift */,
-			);
-			path = colors;
 			sourceTree = "<group>";
 		};
 		5FF2FCAB2C73C46D00917679 /* models */ = {
 			isa = PBXGroup;
 			children = (
 				5FF2FCAC2C73C48600917679 /* PurLogConfigTests.swift */,
-				5FF2FCA92C73C46400917679 /* PurLogColorConfigTests.swift */,
-				5F70EAFA2C73D80000917C4F /* PurLogCredentialsTests.swift */,
+				5F70EAFA2C73D80000917C4F /* PurLogProjectTests.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -345,16 +371,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FF2FC842C72FDD100917679 /* PurLogColorConfig.swift in Sources */,
+				5F7A14552C960376004607D7 /* SdkLogger.swift in Sources */,
+				5F19D8CF2C9574AA00565DE9 /* TokenStatus.swift in Sources */,
+				5F7A14642C969B5A004607D7 /* logging.swift in Sources */,
 				5FF2FC782C72E78E00917679 /* PurLogEnv.swift in Sources */,
-				5FF2FC862C72FF0C00917679 /* PurLogTextColor.swift in Sources */,
+				5F1AA1852C9439D5002667D1 /* URLSession.swift in Sources */,
+				5F19D8BF2C94475D00565DE9 /* logs.swift in Sources */,
+				5F19D8CB2C95660A00565DE9 /* KeychainWrapper.swift in Sources */,
+				5F19D8C92C9564D200565DE9 /* PurLogError.swift in Sources */,
 				5FF2FC752C72E6FB00917679 /* PurLogConfig.swift in Sources */,
+				5F7A14532C95F220004607D7 /* PurLogProject.swift in Sources */,
 				5FF2FC822C72F89800917679 /* dates.swift in Sources */,
+				5F19D8CD2C95742900565DE9 /* jwt.swift in Sources */,
 				5FF2FC712C72BB8A00917679 /* PurLog.swift in Sources */,
 				5FF2FC6F2C72BB2600917679 /* PurLogLevel.swift in Sources */,
-				5FF2FC7C2C72EA3900917679 /* KeychainWrapper.swift in Sources */,
-				5FF2FC892C7303EF00917679 /* PurLogBackgroundColor.swift in Sources */,
-				5FF2FC802C72F5F500917679 /* PurLogCredentials.swift in Sources */,
+				5F19D8C62C95622600565DE9 /* sessionTokens.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,11 +393,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FF2FCAA2C73C46400917679 /* PurLogColorConfigTests.swift in Sources */,
-				5F70EAFB2C73D80000917C4F /* PurLogCredentialsTests.swift in Sources */,
+				5F70EAFB2C73D80000917C4F /* PurLogProjectTests.swift in Sources */,
 				5FF2FC962C7332D300917679 /* datesTests.swift in Sources */,
-				5FF2FC622C72B97900917679 /* PurLogTests.swift in Sources */,
+				5F19D8C22C9448D400565DE9 /* loggerTests.swift in Sources */,
 				5FF2FCAD2C73C48600917679 /* PurLogConfigTests.swift in Sources */,
+				5F1AA1832C9435A9002667D1 /* MockURLSession.swift in Sources */,
+				5F1AA1812C943385002667D1 /* PurLogTests.swift in Sources */,
 				5F412F1F2C74037300A9C41E /* MockKeychainWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,7 +567,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -574,7 +606,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -606,7 +638,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2CX2A263X7;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.metashark.PurLogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -629,7 +661,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2CX2A263X7;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.metashark.PurLogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

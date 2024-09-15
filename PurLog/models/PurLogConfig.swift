@@ -10,21 +10,24 @@ import Foundation
 public struct PurLogConfig {
     let level: PurLogLevel
     let env: PurLogEnv
-    let colorConfig: PurLogColorConfig
-    let credentials: PurLogCredentials?
+    let projectId: String?
     
-    init(level: PurLogLevel = .VERBOSE, env: PurLogEnv = .DEV, credentials: PurLogCredentials? = nil) {
+    init(level: PurLogLevel = .VERBOSE, env: PurLogEnv = .DEV) {
         self.level = level
         self.env = env
-        self.colorConfig = PurLogColorConfig()
-        self.credentials = credentials
+        self.projectId = nil
+    }
+    
+    private init(level: PurLogLevel = .VERBOSE, env: PurLogEnv = .DEV, projectId: String? = nil) {
+        self.level = level
+        self.env = env
+        self.projectId = projectId
     }
     
     public class Builder {
         private var level: PurLogLevel = .VERBOSE
         private var env: PurLogEnv = .DEV
-        private var colorConfig = PurLogColorConfig()
-        private var credentials: PurLogCredentials?
+        private var projectId: String?
         
         public init() {}
         
@@ -38,18 +41,14 @@ public struct PurLogConfig {
             return self
         }
         
-        public func setColorConfig(colorConfig: PurLogColorConfig) -> Builder {
-            self.colorConfig = colorConfig
-            return self
-        }
-        
-        public func setCredentials(clientId: String, token: String) -> Builder {
-            self.credentials = PurLogCredentials(clientId: clientId, token: token)
+        public func setProject(projectId: String, projectJWT: String) -> Builder {
+            let project = PurLogProject(projectId: projectId, projectJWT: projectJWT)
+            self.projectId = project.id
             return self
         }
         
         public func build() -> PurLogConfig {
-            return PurLogConfig(level: level, env: env, credentials: credentials)
+            return PurLogConfig(level: level, env: env, projectId: projectId)
         }
     }
 }
