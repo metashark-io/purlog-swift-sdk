@@ -18,9 +18,7 @@ TODO OVERVIEW
 
 **CocoaPods**
 
-```ruby
-pod 'PurLog'
-```
+TODO
 
 **Swift Package Manager**
 
