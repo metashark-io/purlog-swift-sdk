@@ -87,15 +87,18 @@ public class PurLog {
     }
     
     public func log(_ message: String, level: PurLogLevel) {
+        guard !isInitialized else {
+            return
+        }
         guard shouldLog(for: level, configLevel: config.level) else { return }
         
         SdkLogger.shared.consoleLog(env: config.env, logLevel: level, message: message, isInternal: false)
         
-        guard config.projectId != nil else {
+        guard let projectId = config.projectId else {
             return
         }
         Task {
-            await postLog(config: config, urlSession: URLSession.shared, message: message)
+            await postLog(projectId: projectId, env: config.env, logLevel: level, urlSession: URLSession.shared, message: message)
         }
     }
 }

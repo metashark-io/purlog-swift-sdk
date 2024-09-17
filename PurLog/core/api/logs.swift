@@ -7,13 +7,9 @@
 
 import Foundation
 
-internal func postLog(config: PurLogConfig, urlSession: URLSessionProtocol, message: String) async -> Result<Void, PurLogError> {
+internal func postLog(projectId: String, env: PurLogEnv, logLevel: PurLogLevel, urlSession: URLSessionProtocol, message: String) async -> Result<Void, PurLogError> {
     var projectJWT: String?
     var sessionJWT: String?
-    
-    guard let projectId = config.projectId else {
-        return Result.failure(.error(title: "Failed to create log", message: "projectId cannot be null", logLevel: .ERROR))
-    }
     
     let getProjectResult = KeychainWrapper.shared.get(forKey: "PurLogProjectJWT")
     switch getProjectResult {
@@ -46,8 +42,8 @@ internal func postLog(config: PurLogConfig, urlSession: URLSessionProtocol, mess
         "sessionJWT": sessionJWT,
         "projectId": projectId,
         "message": message,
-        "level": config.level.rawValue,
-        "env": config.env.rawValue
+        "level": logLevel.rawValue,
+        "env": env.rawValue
     ]
     
     var request = URLRequest(url: url)
