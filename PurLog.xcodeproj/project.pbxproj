@@ -148,7 +148,7 @@
 				5FF2FC8A2C730D5C00917679 /* package.swift */,
 				5FF2FC542C72B97900917679 /* PurLog */,
 				5FF2FC602C72B97900917679 /* PurLogTests */,
-				5FF2FCB52C73CE4A00917679 /* KeychainHostTestApps */,
+				5FF2FCB52C73CE4A00917679 /* KeychainHostTestApp */,
 				5FF2FC532C72B97900917679 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -225,13 +225,13 @@
 			path = models;
 			sourceTree = "<group>";
 		};
-		5FF2FCB52C73CE4A00917679 /* KeychainHostTestApps */ = {
+		5FF2FCB52C73CE4A00917679 /* KeychainHostTestApp */ = {
 			isa = PBXGroup;
 			children = (
 				5F7A14802C9CDC5C004607D7 /* KeychainHostTestApp.entitlements */,
 				5FF2FCB62C73CE4A00917679 /* KeychainHostTestApp.swift */,
 			);
-			path = KeychainHostTestApps;
+			path = KeychainHostTestApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
