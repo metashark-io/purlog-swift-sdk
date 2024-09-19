@@ -4,29 +4,28 @@ version: 2.1
 
 orbs:
   macos: circleci/macos@2
-  codecov: codecov/codecov@4.0.1
+  #mac-permissions: circleci/macos
+  #codecov: codecov/codecov@4.0.1
 
+# Build iOS
 jobs:
-  build-and-test:
+  build-ios:
     macos:
-      xcode: "15.4.0" # Specify the Xcode version you are using
+      xcode: "15.4.0"
     environment:
-      # Define any environment variables you might need
       XCODE_SCHEME: "PurLog"
       XCODE_PROJECT: "PurLog.xcodeproj"
       XCODE_SDK: "iphonesimulator"
       XCODE_DESTINATION: "platform=iOS Simulator,OS=17.5,name=iPhone 15"
     steps:
       - checkout
-
       - run:
           name: Install Gems
           command: |
             gem install bundler
             bundle install
-
       - run:
-          name: Build and Test
+          name: Build and Test iOS
           command: |
             xcodebuild clean test \
               -project "$XCODE_PROJECT" \
@@ -34,18 +33,155 @@ jobs:
               -sdk "$XCODE_SDK" \
               -destination "$XCODE_DESTINATION" \
               -enableCodeCoverage YES | xcpretty --test --color
+  
+  # Build iPad
+  build-ipados:
+    macos:
+      xcode: "15.4.0"
+    environment:
+      XCODE_SCHEME: "PurLog"
+      XCODE_PROJECT: "PurLog.xcodeproj"
+      XCODE_SDK: "iphonesimulator"
+      XCODE_DESTINATION: "platform=iOS Simulator,OS=17.5,name=iPad (10th generation)"
+    steps:
+      - checkout
+      - run:
+          name: Build and Test iPadOS
+          command: |
+            xcodebuild clean test \
+              -project "$XCODE_PROJECT" \
+              -scheme "$XCODE_SCHEME" \
+              -sdk "$XCODE_SDK" \
+              -destination "$XCODE_DESTINATION"
 
+  # Build watchOS
+  build-watchos:
+    macos:
+      xcode: "15.4.0"
+    environment:
+      XCODE_SCHEME: "PurLog"
+      XCODE_PROJECT: "PurLog.xcodeproj"
+      XCODE_SDK: "watchsimulator"
+      XCODE_DESTINATION: "platform=watchOS Simulator,OS=10.5,name=Apple Watch Ultra 2"
+    steps:
+      - checkout
       - run:
-          name: Run Slather Coverage
+          name: Install Gems
           command: |
-            bundle exec slather coverage -x --output-directory test_report --scheme "$XCODE_SCHEME" "$XCODE_PROJECT"
+            gem install bundler
+            bundle install
       - run:
-          name: Codecov Upload
+          name: Build and Test WatchOS
           command: |
-            bash <(curl -s https://codecov.io/bash) -f test_report/cobertura.xml -X coveragepy -X gcov -X xcode -t $CODECOV_TOKEN
+            xcodebuild clean test \
+              -project "$XCODE_PROJECT" \
+              -scheme "$XCODE_SCHEME" \
+              -sdk "$XCODE_SDK" \
+              -destination "$XCODE_DESTINATION"
+              
+  # Build tvOS
+  build-tvos:
+    macos:
+      xcode: "15.4.0"
+    environment:
+      XCODE_SCHEME: "PurLog"
+      XCODE_PROJECT: "PurLog.xcodeproj"
+      XCODE_SDK: "appletvsimulator"
+      XCODE_DESTINATION: "platform=tvOS Simulator,OS=17.5,name=Apple TV"
+    steps:
+      - checkout
+      - run:
+          name: Install Gems
+          command: |
+            gem install bundler
+            bundle install
+      - run:
+          name: Build and Test WatchOS
+          command: |
+            xcodebuild clean test \
+              -project "$XCODE_PROJECT" \
+              -scheme "$XCODE_SCHEME" \
+              -sdk "$XCODE_SDK" \
+              -destination "$XCODE_DESTINATION"
+              
+  # Build visionOS
+  build-visionos:
+    macos:
+      xcode: "15.4.0"
+    environment:
+      XCODE_SCHEME: "PurLog"
+      XCODE_PROJECT: "PurLog.xcodeproj"
+      XCODE_SDK: "xrsimulator"
+      XCODE_DESTINATION: "platform=visionOS Simulator,OS=1.2,name=Apple Vision Pro"
+    steps:
+      - checkout
+      - run:
+          name: Install Gems
+          command: |
+            gem install bundler
+            bundle install
+      - run:
+          name: Build and Test WatchOS
+          command: |
+            xcodebuild clean test \
+              -project "$XCODE_PROJECT" \
+              -scheme "$XCODE_SCHEME" \
+              -sdk "$XCODE_SDK" \
+              -destination "$XCODE_DESTINATION"
+              
+  # Build macOS
+  #build-macos:
+  #  macos:
+  #    xcode: "15.4.0"
+  #   steps:
+  #     - checkout
+  #     - run: echo 'chruby ruby-2.7' >> ~/.bash_profile
+  #     - mac-permissions/add-uitest-permissions
+  #     - run: bundle install
+  #     - run: bundle exec fastlane testandbuild
+              
+  #build-and-test:
+  #  macos:
+  #    xcode: "15.4.0"
+  #  environment:
+  #    XCODE_SCHEME: "PurLog"
+  #    XCODE_PROJECT: "PurLog.xcodeproj"
+  #    XCODE_SDK: "iphonesimulator"
+  #    XCODE_DESTINATION: "platform=iOS Simulator,OS=17.5,name=iPhone 15"
+  #  steps:
+  #    - checkout
+  #    - run:
+  #        name: Install Gems
+  #        command: |
+  #          gem install bundler
+  #          bundle install
+  #    - run:
+  #        name: Build and Test iOS
+  #        command: |
+  #          xcodebuild clean test \
+  #            -project "$XCODE_PROJECT" \
+  #            -scheme "$XCODE_SCHEME" \
+  #            -sdk "$XCODE_SDK" \
+  #            -destination "$XCODE_DESTINATION" \
+  #            -enableCodeCoverage YES | xcpretty --test --color
+  #    - run:
+  #        name: Run Slather Coverage
+  #        command: |
+  #          bundle exec slather coverage -x --output-directory test_report --scheme "$XCODE_SCHEME" "$XCODE_PROJECT"
+  #    - run:
+  #        name: Codecov Upload
+  #        command: |
+  #          bash <(curl -s https://codecov.io/bash) -f test_report/cobertura.xml -X coveragepy -X gcov -X xcode -t $CODECOV_TOKEN
+              
 
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build-and-test
+      - build-ios
+      - build-ipados
+      - build-watchos
+      - build-tvos
+      - build-visionos
+      #- build-macos
+      #- build-and-test

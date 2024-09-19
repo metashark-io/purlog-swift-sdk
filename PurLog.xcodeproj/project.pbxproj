@@ -22,7 +22,7 @@
 		5F7A14532C95F220004607D7 /* PurLogProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A14522C95F220004607D7 /* PurLogProject.swift */; };
 		5F7A14552C960376004607D7 /* SdkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A14542C960376004607D7 /* SdkLogger.swift */; };
 		5F7A14642C969B5A004607D7 /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A14632C969B5A004607D7 /* logging.swift */; };
-		5FF2FC5D2C72B97900917679 /* PurLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF2FC522C72B97900917679 /* PurLog.framework */; };
+		5FF2FC5D2C72B97900917679 /* PurLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF2FC522C72B97900917679 /* PurLog.framework */; platformFilters = (ios, macos, tvos, watchos, xros, ); };
 		5FF2FC6F2C72BB2600917679 /* PurLogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC6E2C72BB2600917679 /* PurLogLevel.swift */; };
 		5FF2FC712C72BB8A00917679 /* PurLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC702C72BB8A00917679 /* PurLog.swift */; };
 		5FF2FC752C72E6FB00917679 /* PurLogConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC742C72E6FB00917679 /* PurLogConfig.swift */; };
@@ -67,6 +67,7 @@
 		5F7A14522C95F220004607D7 /* PurLogProject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurLogProject.swift; sourceTree = "<group>"; };
 		5F7A14542C960376004607D7 /* SdkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SdkLogger.swift; sourceTree = "<group>"; };
 		5F7A14632C969B5A004607D7 /* logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logging.swift; sourceTree = "<group>"; };
+		5F7A14802C9CDC5C004607D7 /* KeychainHostTestApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeychainHostTestApp.entitlements; sourceTree = "<group>"; };
 		5FF2FC522C72B97900917679 /* PurLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PurLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF2FC5C2C72B97900917679 /* PurLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF2FC6E2C72BB2600917679 /* PurLogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurLogLevel.swift; sourceTree = "<group>"; };
@@ -147,7 +148,7 @@
 				5FF2FC8A2C730D5C00917679 /* package.swift */,
 				5FF2FC542C72B97900917679 /* PurLog */,
 				5FF2FC602C72B97900917679 /* PurLogTests */,
-				5FF2FCB52C73CE4A00917679 /* KeychainHostTestApp */,
+				5FF2FCB52C73CE4A00917679 /* KeychainHostTestApps */,
 				5FF2FC532C72B97900917679 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -224,12 +225,13 @@
 			path = models;
 			sourceTree = "<group>";
 		};
-		5FF2FCB52C73CE4A00917679 /* KeychainHostTestApp */ = {
+		5FF2FCB52C73CE4A00917679 /* KeychainHostTestApps */ = {
 			isa = PBXGroup;
 			children = (
+				5F7A14802C9CDC5C004607D7 /* KeychainHostTestApp.entitlements */,
 				5FF2FCB62C73CE4A00917679 /* KeychainHostTestApp.swift */,
 			);
-			path = KeychainHostTestApp;
+			path = KeychainHostTestApps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +418,13 @@
 /* Begin PBXTargetDependency section */
 		5FF2FC5F2C72B97900917679 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+				macos,
+				tvos,
+				watchos,
+				xros,
+			);
 			target = 5FF2FC512C72B97900917679 /* PurLog */;
 			targetProxy = 5FF2FC5E2C72B97900917679 /* PBXContainerItemProxy */;
 		};
@@ -480,7 +489,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -540,7 +548,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -573,6 +580,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
@@ -580,14 +588,17 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.metashark.PurLog;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4,6,7";
+				TVOS_DEPLOYMENT_TARGET = 15.5;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+				XROS_DEPLOYMENT_TARGET = 1.2;
 			};
 			name = Debug;
 		};
@@ -612,6 +623,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
@@ -619,14 +631,17 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.metashark.PurLog;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4,6,7";
+				TVOS_DEPLOYMENT_TARGET = 15.5;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+				XROS_DEPLOYMENT_TARGET = 1.2;
 			};
 			name = Release;
 		};
@@ -642,13 +657,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.metashark.PurLogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeychainHostTestApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KeychainHostTestApp";
 			};
 			name = Debug;
@@ -665,13 +680,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.metashark.PurLogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeychainHostTestApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KeychainHostTestApp";
 			};
 			name = Release;
@@ -681,7 +696,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = KeychainHostTestApp/KeychainHostTestApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2CX2A263X7;
@@ -692,6 +707,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -699,13 +715,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.metashark.KeychainHostTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
 			};
 			name = Debug;
 		};
@@ -714,7 +730,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = KeychainHostTestApp/KeychainHostTestApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2CX2A263X7;
@@ -725,6 +741,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -732,13 +749,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.metashark.KeychainHostTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
 			};
 			name = Release;
 		};
