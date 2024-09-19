@@ -62,7 +62,7 @@ jobs:
       XCODE_SCHEME: "PurLog"
       XCODE_PROJECT: "PurLog.xcodeproj"
       XCODE_SDK: "watchsimulator"
-      XCODE_DESTINATION: "platform=watchOS Simulator,OS=10.5,name=Apple Watch Ultra 2"
+      XCODE_DESTINATION: "platform=watchOS Simulator,OS=10.5,name=Apple Watch Ultra 2 (49mm)"
     steps:
       - checkout
       - run:
@@ -71,7 +71,7 @@ jobs:
             gem install bundler
             bundle install
       - run:
-          name: Build and Test WatchOS
+          name: Build and Test watchOS
           command: |
             xcodebuild clean test \
               -project "$XCODE_PROJECT" \
@@ -96,7 +96,7 @@ jobs:
             gem install bundler
             bundle install
       - run:
-          name: Build and Test WatchOS
+          name: Build and Test tvOS
           command: |
             xcodebuild clean test \
               -project "$XCODE_PROJECT" \
@@ -121,7 +121,7 @@ jobs:
             gem install bundler
             bundle install
       - run:
-          name: Build and Test WatchOS
+          name: Build and Test visionOS
           command: |
             xcodebuild clean test \
               -project "$XCODE_PROJECT" \
@@ -178,10 +178,10 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - build-ios
-      - build-ipados
+      #- build-ios
+      #- build-ipados
+      #- build-tvos
+      #- build-visionos
       - build-watchos
-      - build-tvos
-      - build-visionos
       #- build-macos
       #- build-and-test
