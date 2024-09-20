@@ -22,6 +22,10 @@
 		5F7A14532C95F220004607D7 /* PurLogProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A14522C95F220004607D7 /* PurLogProject.swift */; };
 		5F7A14552C960376004607D7 /* SdkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A14542C960376004607D7 /* SdkLogger.swift */; };
 		5F7A14642C969B5A004607D7 /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A14632C969B5A004607D7 /* logging.swift */; };
+		5F7A14882C9CEFD6004607D7 /* KeychainHostTestWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A14872C9CEFD6004607D7 /* KeychainHostTestWatchApp.swift */; };
+		5F7A14922C9CEFDB004607D7 /* KeychainHostTestWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5F7A14852C9CEFD6004607D7 /* KeychainHostTestWatchApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5F7A149E2C9CF1AC004607D7 /* PurLogWatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A149D2C9CF1AC004607D7 /* PurLogWatchTests.swift */; };
+		5F7A149F2C9CF1AC004607D7 /* PurLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF2FC522C72B97900917679 /* PurLog.framework */; };
 		5FF2FC5D2C72B97900917679 /* PurLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF2FC522C72B97900917679 /* PurLog.framework */; platformFilters = (ios, macos, tvos, watchos, xros, ); };
 		5FF2FC6F2C72BB2600917679 /* PurLogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC6E2C72BB2600917679 /* PurLogLevel.swift */; };
 		5FF2FC712C72BB8A00917679 /* PurLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2FC702C72BB8A00917679 /* PurLog.swift */; };
@@ -35,6 +39,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5F7A14902C9CEFDB004607D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FF2FC492C72B97900917679 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F7A14842C9CEFD6004607D7;
+			remoteInfo = "KeychainHostTestWatchApp Watch App";
+		};
+		5F7A14A02C9CF1AC004607D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FF2FC492C72B97900917679 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FF2FC512C72B97900917679;
+			remoteInfo = PurLog;
+		};
+		5F7A14A52C9CF1CF004607D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FF2FC492C72B97900917679 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F7A14842C9CEFD6004607D7;
+			remoteInfo = KeychainHostTestWatchApp;
+		};
 		5FF2FC5E2C72B97900917679 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5FF2FC492C72B97900917679 /* Project object */;
@@ -50,6 +75,20 @@
 			remoteInfo = KeychainHostTestApp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5F7A14962C9CEFDB004607D7 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				5F7A14922C9CEFDB004607D7 /* KeychainHostTestWatchApp.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5F19D8BE2C94475D00565DE9 /* logs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logs.swift; sourceTree = "<group>"; };
@@ -68,6 +107,10 @@
 		5F7A14542C960376004607D7 /* SdkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SdkLogger.swift; sourceTree = "<group>"; };
 		5F7A14632C969B5A004607D7 /* logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logging.swift; sourceTree = "<group>"; };
 		5F7A14802C9CDC5C004607D7 /* KeychainHostTestApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeychainHostTestApp.entitlements; sourceTree = "<group>"; };
+		5F7A14852C9CEFD6004607D7 /* KeychainHostTestWatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeychainHostTestWatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F7A14872C9CEFD6004607D7 /* KeychainHostTestWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHostTestWatchApp.swift; sourceTree = "<group>"; };
+		5F7A149B2C9CF1AC004607D7 /* PurLogWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurLogWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F7A149D2C9CF1AC004607D7 /* PurLogWatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogWatchTests.swift; sourceTree = "<group>"; };
 		5FF2FC522C72B97900917679 /* PurLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PurLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF2FC5C2C72B97900917679 /* PurLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF2FC6E2C72BB2600917679 /* PurLogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurLogLevel.swift; sourceTree = "<group>"; };
@@ -85,6 +128,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5F7A14822C9CEFD6004607D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F7A14982C9CF1AC004607D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F7A149F2C9CF1AC004607D7 /* PurLog.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FF2FC4F2C72B97900917679 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -140,6 +198,22 @@
 			path = api;
 			sourceTree = "<group>";
 		};
+		5F7A14862C9CEFD6004607D7 /* KeychainHostTestWatchApp */ = {
+			isa = PBXGroup;
+			children = (
+				5F7A14872C9CEFD6004607D7 /* KeychainHostTestWatchApp.swift */,
+			);
+			path = KeychainHostTestWatchApp;
+			sourceTree = "<group>";
+		};
+		5F7A149C2C9CF1AC004607D7 /* PurLogWatchTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F7A149D2C9CF1AC004607D7 /* PurLogWatchTests.swift */,
+			);
+			path = PurLogWatchTests;
+			sourceTree = "<group>";
+		};
 		5FF2FC482C72B97900917679 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +223,8 @@
 				5FF2FC542C72B97900917679 /* PurLog */,
 				5FF2FC602C72B97900917679 /* PurLogTests */,
 				5FF2FCB52C73CE4A00917679 /* KeychainHostTestApp */,
+				5F7A14862C9CEFD6004607D7 /* KeychainHostTestWatchApp */,
+				5F7A149C2C9CF1AC004607D7 /* PurLogWatchTests */,
 				5FF2FC532C72B97900917679 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -159,6 +235,8 @@
 				5FF2FC522C72B97900917679 /* PurLog.framework */,
 				5FF2FC5C2C72B97900917679 /* PurLogTests.xctest */,
 				5FF2FCB42C73CE4A00917679 /* KeychainHostTestApp.app */,
+				5F7A14852C9CEFD6004607D7 /* KeychainHostTestWatchApp.app */,
+				5F7A149B2C9CF1AC004607D7 /* PurLogWatchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -247,6 +325,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		5F7A14842C9CEFD6004607D7 /* KeychainHostTestWatchApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F7A14932C9CEFDB004607D7 /* Build configuration list for PBXNativeTarget "KeychainHostTestWatchApp" */;
+			buildPhases = (
+				5F7A14812C9CEFD6004607D7 /* Sources */,
+				5F7A14822C9CEFD6004607D7 /* Frameworks */,
+				5F7A14832C9CEFD6004607D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeychainHostTestWatchApp;
+			productName = "KeychainHostTestWatchApp Watch App";
+			productReference = 5F7A14852C9CEFD6004607D7 /* KeychainHostTestWatchApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5F7A149A2C9CF1AC004607D7 /* PurLogWatchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F7A14A22C9CF1AC004607D7 /* Build configuration list for PBXNativeTarget "PurLogWatchTests" */;
+			buildPhases = (
+				5F7A14972C9CF1AC004607D7 /* Sources */,
+				5F7A14982C9CF1AC004607D7 /* Frameworks */,
+				5F7A14992C9CF1AC004607D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F7A14A12C9CF1AC004607D7 /* PBXTargetDependency */,
+				5F7A14A62C9CF1CF004607D7 /* PBXTargetDependency */,
+			);
+			name = PurLogWatchTests;
+			productName = KeychainHostTestWatchApp;
+			productReference = 5F7A149B2C9CF1AC004607D7 /* PurLogWatchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5FF2FC512C72B97900917679 /* PurLog */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5FF2FC662C72B97900917679 /* Build configuration list for PBXNativeTarget "PurLog" */;
@@ -255,10 +369,12 @@
 				5FF2FC4E2C72B97900917679 /* Sources */,
 				5FF2FC4F2C72B97900917679 /* Frameworks */,
 				5FF2FC502C72B97900917679 /* Resources */,
+				5F7A14962C9CEFDB004607D7 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5F7A14912C9CEFDB004607D7 /* PBXTargetDependency */,
 			);
 			name = PurLog;
 			productName = PurLog;
@@ -311,6 +427,13 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					5F7A14842C9CEFD6004607D7 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					5F7A149A2C9CF1AC004607D7 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 5F7A14842C9CEFD6004607D7;
+					};
 					5FF2FC512C72B97900917679 = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -338,12 +461,28 @@
 			targets = (
 				5FF2FC512C72B97900917679 /* PurLog */,
 				5FF2FC5B2C72B97900917679 /* PurLogTests */,
+				5F7A149A2C9CF1AC004607D7 /* PurLogWatchTests */,
 				5FF2FCB32C73CE4A00917679 /* KeychainHostTestApp */,
+				5F7A14842C9CEFD6004607D7 /* KeychainHostTestWatchApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5F7A14832C9CEFD6004607D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F7A14992C9CF1AC004607D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FF2FC502C72B97900917679 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,6 +508,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5F7A14812C9CEFD6004607D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F7A14882C9CEFD6004607D7 /* KeychainHostTestWatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F7A14972C9CF1AC004607D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F7A149E2C9CF1AC004607D7 /* PurLogWatchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FF2FC4E2C72B97900917679 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,6 +571,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5F7A14912C9CEFDB004607D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F7A14842C9CEFD6004607D7 /* KeychainHostTestWatchApp */;
+			targetProxy = 5F7A14902C9CEFDB004607D7 /* PBXContainerItemProxy */;
+		};
+		5F7A14A12C9CF1AC004607D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FF2FC512C72B97900917679 /* PurLog */;
+			targetProxy = 5F7A14A02C9CF1AC004607D7 /* PBXContainerItemProxy */;
+		};
+		5F7A14A62C9CF1CF004607D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F7A14842C9CEFD6004607D7 /* KeychainHostTestWatchApp */;
+			targetProxy = 5F7A14A52C9CF1CF004607D7 /* PBXContainerItemProxy */;
+		};
 		5FF2FC5F2C72B97900917679 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilters = (
@@ -436,6 +606,102 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		5F7A14942C9CEFDB004607D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 2CX2A263X7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = KeychainHostTestWatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.metashark.PurLog;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.metashark.PurLog.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		5F7A14952C9CEFDB004607D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 2CX2A263X7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = KeychainHostTestWatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.metashark.PurLog;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.metashark.PurLog.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		5F7A14A32C9CF1AC004607D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2CX2A263X7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.metashark.KeychainHostTestWatchApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeychainHostTestWatchApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KeychainHostTestWatchApp";
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		5F7A14A42C9CF1AC004607D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2CX2A263X7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.metashark.KeychainHostTestWatchApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeychainHostTestWatchApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KeychainHostTestWatchApp";
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
 		5FF2FC642C72B97900917679 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -574,7 +840,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -617,7 +883,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -653,17 +919,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2CX2A263X7;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.metashark.PurLogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeychainHostTestApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KeychainHostTestApp";
 			};
 			name = Debug;
@@ -676,17 +942,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2CX2A263X7;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.metashark.PurLogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeychainHostTestApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KeychainHostTestApp";
 			};
 			name = Release;
@@ -762,6 +1028,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5F7A14932C9CEFDB004607D7 /* Build configuration list for PBXNativeTarget "KeychainHostTestWatchApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F7A14942C9CEFDB004607D7 /* Debug */,
+				5F7A14952C9CEFDB004607D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F7A14A22C9CF1AC004607D7 /* Build configuration list for PBXNativeTarget "PurLogWatchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F7A14A32C9CF1AC004607D7 /* Debug */,
+				5F7A14A42C9CF1AC004607D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5FF2FC4C2C72B97900917679 /* Build configuration list for PBXProject "PurLog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
