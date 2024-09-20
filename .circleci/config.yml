@@ -35,7 +35,7 @@ jobs:
               -enableCodeCoverage YES | xcpretty --test --color
   
   # Build iPad
-  build-ipados:
+  build-and-test-ipados:
     macos:
       xcode: "15.4.0"
     environment:
@@ -53,34 +53,9 @@ jobs:
               -scheme "$XCODE_SCHEME" \
               -sdk "$XCODE_SDK" \
               -destination "$XCODE_DESTINATION"
-
-  # Build watchOS
-  build-watchos:
-    macos:
-      xcode: "15.4.0"
-    environment:
-      XCODE_SCHEME: "PurLogWatch"
-      XCODE_PROJECT: "PurLog.xcodeproj"
-      XCODE_SDK: "watchsimulator"
-      XCODE_DESTINATION: "platform=watchOS Simulator,OS=10.5,name=Apple Watch Ultra 2 (49mm)"
-    steps:
-      - checkout
-      - run:
-          name: Install Gems
-          command: |
-            gem install bundler
-            bundle install
-      - run:
-          name: Build and Test watchOS
-          command: |
-            xcodebuild clean test \
-              -project "$XCODE_PROJECT" \
-              -scheme "$XCODE_SCHEME" \
-              -sdk "$XCODE_SDK" \
-              -destination "$XCODE_DESTINATION"
               
   # Build tvOS
-  build-tvos:
+  build-and-test-tvos:
     macos:
       xcode: "15.4.0"
     environment:
@@ -105,7 +80,7 @@ jobs:
               -destination "$XCODE_DESTINATION"
               
   # Build visionOS
-  build-visionos:
+  build-and-test-visionos:
     macos:
       xcode: "15.4.0"
     environment:
@@ -129,8 +104,33 @@ jobs:
               -sdk "$XCODE_SDK" \
               -destination "$XCODE_DESTINATION"
               
+  # Build watchOS
+  build-and-test-watchos:
+    macos:
+      xcode: "15.4.0"
+    environment:
+      XCODE_SCHEME: "PurLogWatch"
+      XCODE_PROJECT: "PurLog.xcodeproj"
+      XCODE_SDK: "watchsimulator"
+      XCODE_DESTINATION: "platform=watchOS Simulator,OS=10.5,name=Apple Watch Ultra 2 (49mm)"
+    steps:
+      - checkout
+      - run:
+          name: Install Gems
+          command: |
+            gem install bundler
+            bundle install
+      - run:
+          name: Build and Test watchOS
+          command: |
+            xcodebuild clean test \
+              -project "$XCODE_PROJECT" \
+              -scheme "$XCODE_SCHEME" \
+              -sdk "$XCODE_SDK" \
+              -destination "$XCODE_DESTINATION"
+              
   # Build macOS
-  #build-macos:
+  #build-and-test-macos:
   #  macos:
   #    xcode: "15.4.0"
   #   steps:
@@ -140,7 +140,7 @@ jobs:
   #     - run: bundle install
   #     - run: bundle exec fastlane testandbuild
               
-  #build-and-test:
+  #publish-codecov:
   #  macos:
   #    xcode: "15.4.0"
   #  environment:
@@ -178,10 +178,10 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      #- build-ios
-      #- build-ipados
-      #- build-tvos
-      #- build-visionos
-      - build-watchos
-      #- build-macos
-      #- build-and-test
+      - build-and-test-ios
+      - build-and-test-ipados
+      - build-and-test-tvos
+      - build-and-test-visionos
+      - build-and-test-watchos
+      #- build-and-test-macos
+      #- publish-codecov
