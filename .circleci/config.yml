@@ -9,7 +9,7 @@ orbs:
 
 # Build iOS
 jobs:
-  build-ios:
+  build-and-test-ios:
     macos:
       xcode: "15.4.0"
     environment:
