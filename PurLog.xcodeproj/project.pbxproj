@@ -381,7 +381,6 @@
 					};
 					5FF2FC5B2C72B97900917679 = {
 						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 5F7A164B2C9D6A34004607D7;
 					};
 					5FF2FCB32C73CE4A00917679 = {
 						CreatedOnToolsVersion = 15.4;
@@ -815,7 +814,6 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeychainHostTest Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KeychainHostTest Watch App";
 			};
 			name = Debug;
 		};
@@ -838,7 +836,6 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeychainHostTest Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KeychainHostTest Watch App";
 			};
 			name = Release;
 		};
