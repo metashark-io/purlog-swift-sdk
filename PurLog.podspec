@@ -1,8 +1,8 @@
 Pod::Spec.new do |spec|
   spec.name         = "PurLog"
-  spec.version      = "0.1.0"
-  spec.summary      = "A logging SDK for Swift."
-  spec.description  = "A logging SDK for Swift (iOS, iPadOS, macOS, watchOS, tvOS, visionOS)."
+  spec.version      = "0.1.1"
+  spec.summary      = "A remote logging SDK for Swift."
+  spec.description  = "A remote logging SDK for Swift (iOS, iPadOS, macOS, watchOS, tvOS, visionOS)."
   spec.homepage     = "https://github.com/metashark-io/purlog-swift-sdk"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author       = { "MetaShark" => "grant@metashark.io" }

@@ -20,8 +20,8 @@ public class PurLog {
             return .failure(PurLogError.error(title: "Initialization failed", message: "Already initialized", logLevel: .WARN))
         }
         SdkLogger.shared.initialize(config: config)
-        SdkLogger.shared.log(level: .VERBOSE, message: "Initializing PurLog...")
         self.config = config
+        SdkLogger.shared.log(level: .VERBOSE, message: "Initializing PurLog...")
         SdkLogger.shared.log(level: .DEBUG, message: "config: \(config)")
         
         guard let projectId = config.projectId else {
@@ -89,7 +89,6 @@ public class PurLog {
     }
     
     public func log(_ message: String, metadata: [String: String] = [:], level: PurLogLevel) {
-        SdkLogger.shared.log(level: .VERBOSE, message: "calling log...")
         guard isInitialized else {
             SdkLogger.shared.log(level: .ERROR, message: "Log failed. PurLog must be initialized")
             return
