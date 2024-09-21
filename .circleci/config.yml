@@ -5,7 +5,7 @@ version: 2.1
 orbs:
   macos: circleci/macos@2
   #mac-permissions: circleci/macos
-  #codecov: codecov/codecov@4.0.1
+  codecov: codecov/codecov@4.0.1
 
 # Build iOS
 jobs:
@@ -140,48 +140,48 @@ jobs:
   #     - run: bundle install
   #     - run: bundle exec fastlane testandbuild
               
-  #publish-codecov:
-  #  macos:
-  #    xcode: "15.4.0"
-  #  environment:
-  #    XCODE_SCHEME: "PurLog"
-  #    XCODE_PROJECT: "PurLog.xcodeproj"
-  #    XCODE_SDK: "iphonesimulator"
-  #    XCODE_DESTINATION: "platform=iOS Simulator,OS=17.5,name=iPhone 15"
-  #  steps:
-  #    - checkout
-  #    - run:
-  #        name: Install Gems
-  #        command: |
-  #          gem install bundler
-  #          bundle install
-  #    - run:
-  #        name: Build and Test iOS
-  #        command: |
-  #          xcodebuild clean test \
-  #            -project "$XCODE_PROJECT" \
-  #            -scheme "$XCODE_SCHEME" \
-  #            -sdk "$XCODE_SDK" \
-  #            -destination "$XCODE_DESTINATION" \
-  #            -enableCodeCoverage YES | xcpretty --test --color
-  #    - run:
-  #        name: Run Slather Coverage
-  #        command: |
-  #          bundle exec slather coverage -x --output-directory test_report --scheme "$XCODE_SCHEME" "$XCODE_PROJECT"
-  #    - run:
-  #        name: Codecov Upload
-  #        command: |
-  #          bash <(curl -s https://codecov.io/bash) -f test_report/cobertura.xml -X coveragepy -X gcov -X xcode -t $CODECOV_TOKEN
+  publish-codecov:
+    macos:
+      xcode: "15.4.0"
+    environment:
+      XCODE_SCHEME: "PurLog"
+      XCODE_PROJECT: "PurLog.xcodeproj"
+      XCODE_SDK: "iphonesimulator"
+      XCODE_DESTINATION: "platform=iOS Simulator,OS=17.5,name=iPhone 15"
+    steps:
+      - checkout
+      - run:
+          name: Install Gems
+          command: |
+            gem install bundler
+            bundle install
+      - run:
+          name: Publish CodeCov Report
+          command: |
+            xcodebuild clean test \
+              -project "$XCODE_PROJECT" \
+              -scheme "$XCODE_SCHEME" \
+              -sdk "$XCODE_SDK" \
+              -destination "$XCODE_DESTINATION" \
+              -enableCodeCoverage YES | xcpretty --test --color
+      - run:
+          name: Run Slather Coverage
+          command: |
+            bundle exec slather coverage -x --output-directory test_report --scheme "$XCODE_SCHEME" "$XCODE_PROJECT"
+      - run:
+          name: Codecov Upload
+          command: |
+            bash <(curl -s https://codecov.io/bash) -f test_report/cobertura.xml -X coveragepy -X gcov -X xcode -t $CODECOV_TOKEN
               
 
 workflows:
   version: 2
   build_and_test:
     jobs:
-      #- build-and-test-ios
-      #- build-and-test-ipados
-      #- build-and-test-tvos
-      #- build-and-test-visionos
+      - build-and-test-ios
+      - build-and-test-ipados
+      - build-and-test-tvos
+      - build-and-test-visionos
       - build-and-test-watchos
       #- build-and-test-macos
-      #- publish-codecov
+      - publish-codecov
