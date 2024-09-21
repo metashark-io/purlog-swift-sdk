@@ -6,6 +6,10 @@
 //
 
 import Foundation
+#if os(iOS) || os(tvOS)
+import UIKit
+#endif
+
 
 internal struct PurLogDeviceInfo {
     let osName: String

@@ -6,7 +6,7 @@ Pod::Spec.new do |spec|
   spec.homepage     = "https://github.com/metashark-io/purlog-swift-sdk"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author       = { "MetaShark" => "grant@metashark.io" }
-  spec.source       = { :git => "https://github.com/metashark-io/purlog-swift-sdk", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/metashark-io/purlog-swift-sdk.git", :tag => "#{spec.version}" }
 
   # Deployment targets for each platform
   spec.ios.deployment_target = "14.0"
@@ -17,4 +17,5 @@ Pod::Spec.new do |spec|
 
   spec.source_files = "PurLog/**/*.{swift,h,m}"
   spec.requires_arc = true
+  spec.swift_version = '5.0'
 end
