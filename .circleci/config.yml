@@ -109,7 +109,7 @@ jobs:
     macos:
       xcode: "15.4.0"
     environment:
-      XCODE_SCHEME: "PurLogWatch"
+      XCODE_SCHEME: "PurLog"
       XCODE_PROJECT: "PurLog.xcodeproj"
       XCODE_SDK: "watchsimulator"
       XCODE_DESTINATION: "platform=watchOS Simulator,OS=10.5,name=Apple Watch Ultra 2 (49mm)"
