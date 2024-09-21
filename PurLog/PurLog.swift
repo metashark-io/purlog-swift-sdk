@@ -13,6 +13,7 @@ public class PurLog {
     
     private var config: PurLogConfig = PurLogConfig(level: .VERBOSE, env: .DEV)
     private var isInitialized = false
+    private let deviceInfo = PurLogDeviceInfo().asDictionary()
     
     public func initialize(config: PurLogConfig) async -> Result<Void, PurLogError> {
         guard !isInitialized else {
@@ -21,10 +22,11 @@ public class PurLog {
         SdkLogger.shared.initialize(config: config)
         SdkLogger.shared.log(level: .VERBOSE, message: "Initializing PurLog...")
         self.config = config
+        SdkLogger.shared.log(level: .DEBUG, message: "config: \(config)")
         
         guard let projectId = config.projectId else {
             // Xcode logging enabled for client
-            SdkLogger.shared.log(level: .INFO, message: "PurLog Initialized!")
+            SdkLogger.shared.log(level: .INFO, message: "PurLog Initialized without projectId")
             isInitialized = true
             return .success(())
         }
@@ -37,10 +39,10 @@ public class PurLog {
         case .success(let success):
             projectJWT = success
         case .failure(let failure):
-            return Result.failure(.error(title: "Failed to initialize SDK", message: "Unable to retrieve project JWT from keychain. " + failure.message, logLevel: .ERROR))
+            return Result.failure(.error(title: "Failed to initialize PurLog", message: "Unable to retrieve project JWT from keychain. " + failure.message, logLevel: .ERROR))
         }
         guard let projectJWT = projectJWT, projectJWT != "" else {
-            return Result.failure(.error(title: "Failed to initialize SDK", message: "Invalid project JWT", logLevel: .ERROR))
+            return Result.failure(.error(title: "Failed to initialize PurLog", message: "Invalid project JWT", logLevel: .ERROR))
         }
         
         var uuid: String? = nil
@@ -60,7 +62,7 @@ public class PurLog {
             }
         }
         guard let uuid = uuid, uuid != "" else {
-            return Result.failure(.error(title: "Failed to initialize SDK", message: "Invalid UUID", logLevel: .ERROR))
+            return Result.failure(.error(title: "Failed to initialize PurLog", message: "Invalid UUID", logLevel: .ERROR))
         }
                 
         let getSessionResult = KeychainWrapper.shared.get(forKey: "PurLogSessionJWT")
@@ -73,32 +75,46 @@ public class PurLog {
             case .success(let success):
                 sessionJWT = success
             case .failure(let failure):
-                return Result.failure(.error(title: "Failed to initialize SDK", message: "Unable to create session token. " + failure.message, logLevel: .ERROR))
+                return Result.failure(.error(title: "Failed to initialize PurLog", message: "Unable to create session token. " + failure.message, logLevel: .ERROR))
             }
         }
         guard let sessionJWT = sessionJWT, sessionJWT != "" else {
-            return Result.failure(.error(title: "Failed to initialize SDK", message: "Invalid session JWT", logLevel: .ERROR))
+            return Result.failure(.error(title: "Failed to initialize PurLog", message: "Invalid session JWT", logLevel: .ERROR))
         }
         
         await refreshTokenIfExpired(projectJWT: projectJWT, sessionJWT: sessionJWT, projectId: projectId)
-        SdkLogger.shared.log(level: .INFO, message: "PurLog initialized!")
+        SdkLogger.shared.log(level: .INFO, message: "PurLog initialized with projectId \(projectId)!")
         isInitialized = true
         return .success(())
     }
     
-    public func log(_ message: String, level: PurLogLevel) {
-        guard !isInitialized else {
+    public func log(_ message: String, metadata: [String: String] = [:], level: PurLogLevel) {
+        SdkLogger.shared.log(level: .VERBOSE, message: "calling log...")
+        guard isInitialized else {
+            SdkLogger.shared.log(level: .ERROR, message: "Log failed. PurLog must be initialized")
             return
         }
         guard shouldLog(for: level, configLevel: config.level) else { return }
         
-        SdkLogger.shared.consoleLog(env: config.env, logLevel: level, message: message, isInternal: false)
+        SdkLogger.shared.consoleLog(
+            env: config.env,
+            logLevel: level,
+            message: message,
+            metadata: metadata,
+            isInternal: false
+        )
         
-        guard let projectId = config.projectId else {
-            return
-        }
+        guard let projectId = config.projectId else { return }
         Task {
-            await postLog(projectId: projectId, env: config.env, logLevel: level, urlSession: URLSession.shared, message: message)
+            await postLog(
+                projectId: projectId,
+                env: config.env,
+                logLevel: level,
+                urlSession: URLSession.shared,
+                message: message,
+                metadata: metadata,
+                deviceInfo: deviceInfo
+            )
         }
     }
 }

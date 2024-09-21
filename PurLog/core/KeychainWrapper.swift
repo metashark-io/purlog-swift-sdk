@@ -26,7 +26,7 @@ internal class KeychainWrapper {
         let status = SecItemAdd(query as CFDictionary, nil)
                 
         guard status == errSecSuccess else {
-            return .failure(PurLogError(title: "PurLog KeychainWrapper failed to save key", message: "status: \(status)"))
+            return .failure(PurLogError.error(title: "PurLog KeychainWrapper failed to save key", message: "status: \(status)"))
         }
         return .success(())
     }
@@ -43,13 +43,13 @@ internal class KeychainWrapper {
         let status: OSStatus = SecItemCopyMatching(query as CFDictionary, &dataTypeRef)
         
         guard status == errSecSuccess else {
-            return .failure(PurLogError(title: "PurLog KeychainWrapper failed to get key", message: "status: \(status)"))
+            return .failure(PurLogError.error(title: "PurLog KeychainWrapper failed to get key", message: "status: \(status)"))
         }
         guard let data = dataTypeRef as? Data else {
-            return .failure(PurLogError(title: "PurLog KeychainWrapper failed to get key", message: "dataTypeRef must be a non-null Data type"))
+            return .failure(PurLogError.error(title: "PurLog KeychainWrapper failed to get key", message: "dataTypeRef must be a non-null Data type"))
         }
         guard let retrievedString = String(data: data, encoding: .utf8) else {
-            return .failure(PurLogError(title: "PurLog KeychainWrapper failed to get key", message: "unable to convert data to string"))
+            return .failure(PurLogError.error(title: "PurLog KeychainWrapper failed to get key", message: "unable to convert data to string"))
         }
         return .success(retrievedString)
     }

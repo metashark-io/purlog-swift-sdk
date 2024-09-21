@@ -23,36 +23,36 @@ internal class SdkLogger {
         self.configLevel = config.level
     }
     
-    public func log(level: PurLogLevel, message: String) {
+    public func log(level: PurLogLevel, message: String, metadata: [String: String] = [:]) {
         guard env == .DEV else {
             return
         }
         guard shouldLog(for: level, configLevel: configLevel) else {
             return
         }
-        consoleLog(env: env, logLevel: level, message: message, isInternal: true)
+        consoleLog(env: env, logLevel: level, message: message, metadata: metadata, isInternal: true)
     }
     
-    internal func consoleLog(env: PurLogEnv, logLevel: PurLogLevel, message: String, isInternal: Bool) {
+    internal func consoleLog(env: PurLogEnv, logLevel: PurLogLevel, message: String, metadata: [String: String], isInternal: Bool) {
         guard env == .DEV else { return }
         let logger = Logger()
         let formattedMessage = "[\(getCurrentTimestamp())] [\(logLevel.rawValue)]\(isInternal ? " [PurLog] " : " ")\(message)"
+        let formattedMessageWithMetaData = !metadata.isEmpty ? "\(formattedMessage)\n\nmetadata: \(metadata)" : formattedMessage
         switch logLevel {
         case .VERBOSE:
-            logger.log("⚪️ \(formattedMessage)")
+            logger.log("⚪️ \(formattedMessageWithMetaData)")
         case .DEBUG:
-            logger.debug("🔵 \(formattedMessage)")
+            logger.debug("🔵 \(formattedMessageWithMetaData)")
         case .INFO:
-            logger.info("🟢 \(formattedMessage)")
+            logger.info("🟢 \(formattedMessageWithMetaData)")
         case .WARN:
-            logger.warning("🟡 \(formattedMessage)")
+            logger.warning("🟡 \(formattedMessageWithMetaData)")
         case .ERROR:
-            logger.error("🔴 \(formattedMessage)")
+            logger.error("🔴 \(formattedMessageWithMetaData)")
         case .FATAL:
-            logger.critical("🔴🔴🔴 \(formattedMessage)")
+            logger.critical("🔴🔴🔴 \(formattedMessageWithMetaData)")
         }
         return
     }
-
 }
 

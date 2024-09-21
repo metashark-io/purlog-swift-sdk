@@ -14,6 +14,7 @@ internal class SessionTokenManager {
     var isRefreshing = false
     
     internal func createToken(projectJWT: String, uuid: String, projectId: String) async -> Result<String, PurLogError> {
+        SdkLogger.shared.log(level: .VERBOSE, message: "calling createToken")
         isRefreshing = true
         let url = URL(string: "https://us-central1-purlog-45f7f.cloudfunctions.net/api/session_tokens")!
 
@@ -34,7 +35,7 @@ internal class SessionTokenManager {
             
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 isRefreshing = false
-                return Result.failure(.error(title: "Failed to create session token", message: "Non-200 status code.", logLevel: .ERROR))
+                return Result.failure(.error(title: "Failed to create session JWT", message: "Non-200 status code.", logLevel: .ERROR))
             }
             
             if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
@@ -51,15 +52,16 @@ internal class SessionTokenManager {
                 }
             } else {
                 isRefreshing = false
-                return Result.failure(.error(title: "Failed to create session token", message: "Failed to parse the response.", logLevel: .ERROR))
+                return Result.failure(.error(title: "Failed to create session JWT", message: "Failed to parse the response.", logLevel: .ERROR))
             }
         } catch {
             isRefreshing = false
-            return Result.failure(.error(title: "Failed to create session token", error: error))
+            return Result.failure(.error(title: "Failed to create session JWT", error: error))
         }
     }
     
     internal func refreshToken(projectJWT: String, sessionJWT: String, projectId: String) async -> Result<String, PurLogError> {
+        SdkLogger.shared.log(level: .VERBOSE, message: "refreshing session JWT...")
         isRefreshing = true
         let url = URL(string: "https://us-central1-purlog-45f7f.cloudfunctions.net/api/session_tokens/refresh")!
 
@@ -80,7 +82,7 @@ internal class SessionTokenManager {
             
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 isRefreshing = false
-                return Result.failure(.error(title: "Failed to refresh token", message: "Non-200 status code.", logLevel: .ERROR))
+                return Result.failure(.error(title: "Failed to refresh session JWT", message: "Non-200 status code.", logLevel: .ERROR))
             }
             
             if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
@@ -93,15 +95,15 @@ internal class SessionTokenManager {
                     return .success(newJwt)
                 case .failure(let failure):
                     isRefreshing = false
-                    return Result.failure(.error(title: "Failed to refresh token", message: "Unable to save jwt to keychain. " + failure.message, logLevel: .ERROR))
+                    return Result.failure(.error(title: "Failed to refresh session JWT", message: "Unable to save jwt to keychain. " + failure.message, logLevel: .ERROR))
                 }
             } else {
                 isRefreshing = false
-                return Result.failure(.error(title: "Failed to refresh token", message: "Failed to parse the response.", logLevel: .ERROR))
+                return Result.failure(.error(title: "Failed to refresh session JWT", message: "Failed to parse the response.", logLevel: .ERROR))
             }
         } catch {
             isRefreshing = false
-            return Result.failure(.error(title: "Failed to refresh token", error: error))
+            return Result.failure(.error(title: "Failed to refresh session JWT", error: error))
         }
     }
 }

@@ -46,7 +46,7 @@ internal final class PurLogProjectTests: XCTestCase {
         
         // Mock the save method to simulate a failure
         let mockKeychainWrapper = MockKeychainWrapper()
-        mockKeychainWrapper.saveReturnStatus = .failure(PurLogError(title: nil, message: "errSecDuplicateItem"))
+        mockKeychainWrapper.saveReturnStatus = .failure(PurLogError.error(title: "Error", message: "errSecDuplicateItem"))
         
         // Act
         let credentials = PurLogProject(projectId: projectId, projectJWT: token, keychainWrapper: mockKeychainWrapper)
@@ -65,7 +65,7 @@ internal final class PurLogProjectTests: XCTestCase {
         mockKeychainWrapper.saveReturnStatus = .success(())
         
         // Mock the get method to simulate a failure
-        mockKeychainWrapper.getReturnStatus = .failure(PurLogError(title: nil, message: "errSecItemNotFound")) // Simulate item not found error
+        mockKeychainWrapper.getReturnStatus = .failure(PurLogError.error(title: "Error", message: "errSecItemNotFound")) // Simulate item not found error
         
         // Act
         let credentials = PurLogProject(projectId: projectId, projectJWT: token, keychainWrapper: mockKeychainWrapper)

@@ -7,7 +7,8 @@
 
 import Foundation
 
-internal func postLog(projectId: String, env: PurLogEnv, logLevel: PurLogLevel, urlSession: URLSessionProtocol, message: String) async -> Result<Void, PurLogError> {
+internal func postLog(projectId: String, env: PurLogEnv, logLevel: PurLogLevel, urlSession: URLSessionProtocol, message: String, metadata: [String: String], deviceInfo: [String: String]) async -> Result<Void, PurLogError> {
+    SdkLogger.shared.log(level: .VERBOSE, message: "calling postLog...")
     var projectJWT: String?
     var sessionJWT: String?
     
@@ -43,7 +44,9 @@ internal func postLog(projectId: String, env: PurLogEnv, logLevel: PurLogLevel, 
         "projectId": projectId,
         "message": message,
         "level": logLevel.rawValue,
-        "env": env.rawValue
+        "env": env.rawValue,
+        "deviceInfo": deviceInfo,
+        "metadata": metadata
     ]
     
     var request = URLRequest(url: url)
@@ -56,7 +59,7 @@ internal func postLog(projectId: String, env: PurLogEnv, logLevel: PurLogLevel, 
         let (_, response) = try await urlSession.data(for: request)
 
         if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
-            SdkLogger.shared.log(level: .INFO, message: "Log posted to cloud successfully")
+            SdkLogger.shared.log(level: .VERBOSE, message: "postLog success!")
             return .success(())
         } else {
             return Result.failure(.error(title: "Failed to create log", message: "Bad response.", logLevel: .ERROR))

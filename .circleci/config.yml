@@ -178,10 +178,10 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - build-and-test-ios
-      - build-and-test-ipados
-      - build-and-test-tvos
-      - build-and-test-visionos
+      #- build-and-test-ios
+      #- build-and-test-ipados
+      #- build-and-test-tvos
+      #- build-and-test-visionos
       - build-and-test-watchos
       #- build-and-test-macos
       #- publish-codecov

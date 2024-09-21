@@ -8,10 +8,8 @@
 import SwiftUI
 
 @main
-struct KeychainHostTest_Watch_AppApp: App {
+internal struct KeychainHostTest_Watch_AppApp: App {
     var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+        WindowGroup {}
     }
 }
