@@ -125,6 +125,7 @@ jobs:
           command: |
             xcodebuild clean test \
               -project "$XCODE_PROJECT" \
+              -configuration Debug-watchOS \
               -scheme "$XCODE_SCHEME" \
               -sdk "$XCODE_SDK" \
               -destination "$XCODE_DESTINATION"
