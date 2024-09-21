@@ -1,1 +1,0 @@
-TEST_HOST = $(BUILT_PRODUCTS_DIR)/KeychainHostTest_Watch_AppApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KeychainHostTest_Watch_AppApp
