@@ -26,7 +26,7 @@ A remote logging SDK for Swift (iOS, iPadOS, macOS, watchOS, tvOS, visionOS).
 ### CocoaPods
 
 ```ruby
-pod 'PurLog', '~> 0.1.1'
+pod 'PurLog', '~> 0.9.0'
 ```
 
 
