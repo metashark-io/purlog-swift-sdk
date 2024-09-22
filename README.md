@@ -70,13 +70,13 @@ Note: to use `.setProject()`, you must configure a [PurLog](https://app.purlog.i
 After a successfull initialization, you'll be able to invoke logs
 
 ```swift
-PurLog.shared.log("Test DEBUG Log", level: .DEBUG)
+PurLog.shared.debug("Test DEBUG Log")
 ```
 
 You can also include `metadata` if needed:
 
 ```swift
-PurLog.shared.log("Test DEBUG Log", metadata: ["key": "value"] level: .DEBUG)
+PurLog.shared.debug("Test DEBUG Log", metadata: ["key": "value"])
 ```
 
 
@@ -100,12 +100,12 @@ struct PurLogSampleApp: App {
         
         Task {
             _ = await PurLog.shared.initialize(config: config)
-            PurLog.shared.log("Test VERBOSE Log", metadata: ["key": "value"], level: .VERBOSE)
-            PurLog.shared.log("Test DEBUG Log", level: .DEBUG)
-            PurLog.shared.log("Test INFO Log", level: .INFO)
-            PurLog.shared.log("Test WARN Log", level: .WARN)
-            PurLog.shared.log("Test ERROR Log", level: .ERROR)
-            PurLog.shared.log("Test FATAL Log", level: .FATAL)
+            PurLog.shared.verbose("Test VERBOSE Log", metadata: ["key": "value"])
+            PurLog.shared.debug("Test DEBUG Log")
+            PurLog.shared.info("Test INFO Log")
+            PurLog.shared.warn("Test WARN Log")
+            PurLog.shared.error("Test ERROR Log")
+            PurLog.shared.fatal("Test FATAL Log")
         }
     }
     
