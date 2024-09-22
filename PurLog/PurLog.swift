@@ -14,6 +14,7 @@ public class PurLog {
     private var config: PurLogConfig = PurLogConfig(level: .VERBOSE, env: .DEV)
     private var isInitialized = false
     private let deviceInfo = PurLogDeviceInfo().asDictionary()
+    private let appVersion: String =  Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
     
     public func initialize(config: PurLogConfig) async -> Result<Void, PurLogError> {
         guard !isInitialized else {
@@ -88,7 +89,31 @@ public class PurLog {
         return .success(())
     }
     
-    public func log(_ message: String, metadata: [String: String] = [:], level: PurLogLevel) {
+    public func verbose(_ message: String, metadata: [String: String] = [:]) {
+        log(message, metadata: metadata, level: .VERBOSE)
+    }
+    
+    public func debug(_ message: String, metadata: [String: String] = [:]) {
+        log(message, metadata: metadata, level: .DEBUG)
+    }
+    
+    public func info(_ message: String, metadata: [String: String] = [:]) {
+        log(message, metadata: metadata, level: .INFO)
+    }
+    
+    public func warn(_ message: String, metadata: [String: String] = [:]) {
+        log(message, metadata: metadata, level: .WARN)
+    }
+    
+    public func error(_ message: String, metadata: [String: String] = [:]) {
+        log(message, metadata: metadata, level: .ERROR)
+    }
+    
+    public func fatal(_ message: String, metadata: [String: String] = [:]) {
+        log(message, metadata: metadata, level: .FATAL)
+    }
+    
+    private func log(_ message: String, metadata: [String: String] = [:], level: PurLogLevel) {
         guard isInitialized else {
             SdkLogger.shared.log(level: .ERROR, message: "Log failed. PurLog must be initialized")
             return
@@ -112,7 +137,8 @@ public class PurLog {
                 urlSession: URLSession.shared,
                 message: message,
                 metadata: metadata,
-                deviceInfo: deviceInfo
+                deviceInfo: deviceInfo,
+                appVersion: appVersion
             )
         }
     }

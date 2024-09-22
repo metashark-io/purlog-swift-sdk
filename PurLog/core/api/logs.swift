@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal func postLog(projectId: String, env: PurLogEnv, logLevel: PurLogLevel, urlSession: URLSessionProtocol, message: String, metadata: [String: String], deviceInfo: [String: String]) async -> Result<Void, PurLogError> {
+internal func postLog(projectId: String, env: PurLogEnv, logLevel: PurLogLevel, urlSession: URLSessionProtocol, message: String, metadata: [String: String], deviceInfo: [String: String], appVersion: String) async -> Result<Void, PurLogError> {
     var projectJWT: String?
     var sessionJWT: String?
     
@@ -45,7 +45,8 @@ internal func postLog(projectId: String, env: PurLogEnv, logLevel: PurLogLevel, 
         "level": logLevel.rawValue,
         "env": env.rawValue,
         "deviceInfo": deviceInfo,
-        "metadata": metadata
+        "metadata": metadata,
+        "appVersion": appVersion
     ]
     
     var request = URLRequest(url: url)

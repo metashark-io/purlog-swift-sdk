@@ -15,7 +15,6 @@ internal struct PurLogDeviceInfo {
     let osName: String
     let osVersion: String
     //let deviceModel: String // TODO:
-    let appVersion: String
     
     init() {
         let osName: String
@@ -42,15 +41,13 @@ internal struct PurLogDeviceInfo {
             
         self.osName = osName
         self.osVersion = versionString
-        self.appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
     }
     
     func asDictionary() -> [String: String] {
         return [
             "osName": osName,
             "osVersion": osVersion,
-            //"deviceModel": deviceModel,
-            "appVersion": appVersion
+            //"deviceModel": deviceModel
         ]
     }
 }
