@@ -12,12 +12,6 @@ internal struct PurLogProject {
 
     init(projectId: String, projectJWT: String, keychainWrapper: KeychainWrapper = KeychainWrapper.shared) {
         self.id = projectId
-        let saveResult = KeychainWrapper.shared.save(token: projectJWT, forKey: "PurLogProjectJWT")
-        switch saveResult {
-        case .success(_):
-            break
-        case .failure(_):
-            return
-        }
+        let _ = KeychainWrapper.shared.save(token: projectJWT, forKey: "PurLogProjectJWT")
     }
 }

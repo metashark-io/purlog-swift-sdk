@@ -46,8 +46,7 @@ internal struct PurLogDeviceInfo {
     func asDictionary() -> [String: String] {
         return [
             "osName": osName,
-            "osVersion": osVersion,
-            //"deviceModel": deviceModel
+            "osVersion": osVersion
         ]
     }
 }

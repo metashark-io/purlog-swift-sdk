@@ -5,9 +5,7 @@ A remote logging SDK for Swift (iOS, iPadOS, macOS, watchOS, tvOS, visionOS).
 </p>
 
 <p align="center">
-  <a href="#">
-    <img src="https://img.shields.io/badge/version-0.1.0-blue" alt="Version">
-  </a>
+      <img src="https://img.shields.io/badge/version-0.9.0-blue" alt="Version">
       <img src="https://dl.circleci.com/status-badge/img/circleci/QHEuwkxDTekYMK98ity4TZ/TWGJsGj8BZfk7zWxRHHivb/tree/main.svg?style=shield&circle-token=CCIPRJ_9jUzr3iF6zTXTuNYt8iphq_d4244d11b2f06e07038419520974d436f6ef3ba2" alt="CircleCI">
   <a href="https://codecov.io/gh/metashark-io/purlog-ios">
     <img src="https://codecov.io/gh/metashark-io/purlog-swift-sdk/branch/main/graph/badge.svg?token=H66O7DR38E"/>
@@ -26,7 +24,7 @@ A remote logging SDK for Swift (iOS, iPadOS, macOS, watchOS, tvOS, visionOS).
 ### CocoaPods
 
 ```ruby
-pod 'PurLog', '~> 0.1.1'
+pod 'PurLog', '~> 0.9.0'
 ```
 
 

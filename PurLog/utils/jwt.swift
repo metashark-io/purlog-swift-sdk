@@ -22,7 +22,8 @@ internal func refreshTokenIfExpired(projectJWT: String, sessionJWT: String, proj
                 }
             }
         case .failure(_):
-            break // this shouldn't fail
+            // this shouldn't fail
+            SdkLogger.shared.log(level: .ERROR, message: "checkTokenExpiration failed")
         }
     }
 }
