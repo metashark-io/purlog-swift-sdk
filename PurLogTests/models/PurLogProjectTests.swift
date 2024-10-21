@@ -12,7 +12,7 @@ import XCTest
 
 internal final class PurLogProjectTests: XCTestCase {
     
-    override func setUp() {
+    /*override func setUp() {
         super.setUp()
         // Clean up Keychain before each test to ensure a fresh start
         let _ = KeychainWrapper.shared.delete(forKey: "PurLogProjectJWT")
@@ -72,5 +72,5 @@ internal final class PurLogProjectTests: XCTestCase {
         
         // Assert
         XCTAssertEqual(credentials.id, projectId)
-    }
+    }*/
 }

@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "PurLog"
-  spec.version      = "0.9.0"
+  spec.version      = "0.9.1"
   spec.summary      = "A remote logging SDK for Swift."
   spec.description  = "A remote logging SDK for Swift (iOS, iPadOS, macOS, watchOS, tvOS, visionOS)."
   spec.homepage     = "https://github.com/metashark-io/purlog-swift-sdk"

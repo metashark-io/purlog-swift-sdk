@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 public class PurLog {
     
     public static let shared = PurLog()
@@ -129,10 +130,11 @@ public class PurLog {
         )
         
         guard let projectId = config.projectId else { return }
+        let env = config.env
         Task {
             await postLog(
                 projectId: projectId,
-                env: config.env,
+                env: env,
                 logLevel: level,
                 urlSession: URLSession.shared,
                 message: message,

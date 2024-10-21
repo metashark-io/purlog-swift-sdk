@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 internal class SessionTokenManager {
     
     public static let shared = SessionTokenManager()
@@ -40,7 +41,7 @@ internal class SessionTokenManager {
             
             if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
                let newJwt = json["jwt"] as? String {
-                let saveResult = KeychainWrapper.shared.save(token: newJwt, forKey: "PurLogSessionJWT")
+                let saveResult = await KeychainWrapper.shared.save(token: newJwt, forKey: "PurLogSessionJWT")
                 switch saveResult {
                 case .success(let success):
                     SdkLogger.shared.log(level: .INFO, message: "Session JWT created!")
@@ -61,7 +62,7 @@ internal class SessionTokenManager {
     }
     
     internal func refreshToken(projectJWT: String, sessionJWT: String, projectId: String) async -> Result<String, PurLogError> {
-        SdkLogger.shared.log(level: .VERBOSE, message: "refreshing session JWT...")
+        await SdkLogger.shared.log(level: .VERBOSE, message: "refreshing session JWT...")
         isRefreshing = true
         let url = URL(string: "https://us-central1-purlog-45f7f.cloudfunctions.net/api/session_tokens/refresh")!
 
@@ -87,11 +88,11 @@ internal class SessionTokenManager {
             
             if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
                let newJwt = json["jwt"] as? String {
-                let saveResult = KeychainWrapper.shared.save(token: newJwt, forKey: "PurLogSessionJWT")
+                let saveResult = await KeychainWrapper.shared.save(token: newJwt, forKey: "PurLogSessionJWT")
                 switch saveResult {
                 case .success(let success):
                     isRefreshing = false
-                    SdkLogger.shared.log(level: .INFO, message: "Session JWT refreshed!")
+                    await SdkLogger.shared.log(level: .INFO, message: "Session JWT refreshed!")
                     return .success(newJwt)
                 case .failure(let failure):
                     isRefreshing = false

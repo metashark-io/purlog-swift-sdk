@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 #endif
 
-
+@MainActor
 internal struct PurLogDeviceInfo {
     let osName: String
     let osVersion: String

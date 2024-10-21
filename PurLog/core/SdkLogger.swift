@@ -8,6 +8,7 @@
 import Foundation
 import OSLog
 
+@MainActor 
 internal class SdkLogger {
     
     public static let shared = SdkLogger()

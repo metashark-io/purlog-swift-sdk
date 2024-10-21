@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 internal class KeychainWrapper {
     
     static let shared = KeychainWrapper()

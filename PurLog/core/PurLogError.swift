@@ -7,7 +7,8 @@
 
 import Foundation
 
-public class PurLogError: Error {
+@MainActor
+final public class PurLogError: Error {
     let title: String
     let message: String
     

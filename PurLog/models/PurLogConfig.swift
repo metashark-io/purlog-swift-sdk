@@ -41,9 +41,9 @@ public struct PurLogConfig {
             return self
         }
         
-        public func setProject(projectId: String, projectJWT: String) -> Builder {
-            let project = PurLogProject(projectId: projectId, projectJWT: projectJWT)
-            self.projectId = project.id
+        @MainActor public func setProject(projectId: String, projectJWT: String) -> Builder {
+            let _ = KeychainWrapper.shared.save(token: projectJWT, forKey: "PurLogProjectJWT")
+            self.projectId = projectId
             return self
         }
         

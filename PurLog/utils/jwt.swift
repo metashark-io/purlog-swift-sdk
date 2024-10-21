@@ -15,7 +15,7 @@ internal func refreshTokenIfExpired(projectJWT: String, sessionJWT: String, proj
         case .success(let status):
             //SdkLogger.shared.log(level: .DEBUG, message: "Token status: \(status.rawValue)")
             if status == .EXPIRED {
-                if !SessionTokenManager.shared.isRefreshing {
+                if await !SessionTokenManager.shared.isRefreshing {
                     _ = await SessionTokenManager.shared.refreshToken(projectJWT: projectJWT, sessionJWT: sessionJWT, projectId: projectId)
                 } else {
                     // TODO: queue log and retry
@@ -23,7 +23,7 @@ internal func refreshTokenIfExpired(projectJWT: String, sessionJWT: String, proj
             }
         case .failure(_):
             // this shouldn't fail
-            SdkLogger.shared.log(level: .ERROR, message: "checkTokenExpiration failed")
+            await SdkLogger.shared.log(level: .ERROR, message: "checkTokenExpiration failed")
         }
     }
 }
@@ -39,10 +39,10 @@ private func checkTokenExpiration(sessionJWT: String) async -> Result<TokenStatu
             // Check if the token is expired
             return .success(expirationDate < Date() ? .EXPIRED : .VALID)
         } else {
-            return .failure(PurLogError.error(title: "Failed to decode JWT", message: "expiration field not found", logLevel: .ERROR))
+            return await .failure(PurLogError.error(title: "Failed to decode JWT", message: "expiration field not found", logLevel: .ERROR))
         }
     } catch {
-        return .failure(PurLogError.error(title: "Failed to decode JWT", message: error.localizedDescription, logLevel: .ERROR))
+        return await .failure(PurLogError.error(title: "Failed to decode JWT", message: error.localizedDescription, logLevel: .ERROR))
     }
 }
 

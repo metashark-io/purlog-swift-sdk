@@ -19,7 +19,6 @@
 		5F1AA1852C9439D5002667D1 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1AA1842C9439D5002667D1 /* URLSession.swift */; };
 		5F412F1F2C74037300A9C41E /* MockKeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F412F1E2C74037300A9C41E /* MockKeychainWrapper.swift */; };
 		5F70EAFB2C73D80000917C4F /* PurLogProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F70EAFA2C73D80000917C4F /* PurLogProjectTests.swift */; };
-		5F7A14532C95F220004607D7 /* PurLogProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A14522C95F220004607D7 /* PurLogProject.swift */; };
 		5F7A14552C960376004607D7 /* SdkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A14542C960376004607D7 /* SdkLogger.swift */; };
 		5F7A14642C969B5A004607D7 /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A14632C969B5A004607D7 /* logging.swift */; };
 		5F7A16522C9D6A34004607D7 /* KeychainHostTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A16512C9D6A34004607D7 /* KeychainHostTestApp.swift */; };
@@ -75,7 +74,6 @@
 		5F1AA1842C9439D5002667D1 /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
 		5F412F1E2C74037300A9C41E /* MockKeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeychainWrapper.swift; sourceTree = "<group>"; };
 		5F70EAFA2C73D80000917C4F /* PurLogProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogProjectTests.swift; sourceTree = "<group>"; };
-		5F7A14522C95F220004607D7 /* PurLogProject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurLogProject.swift; sourceTree = "<group>"; };
 		5F7A14542C960376004607D7 /* SdkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SdkLogger.swift; sourceTree = "<group>"; };
 		5F7A14632C969B5A004607D7 /* logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logging.swift; sourceTree = "<group>"; };
 		5F7A14802C9CDC5C004607D7 /* KeychainHostTestApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeychainHostTestApp.entitlements; sourceTree = "<group>"; };
@@ -91,7 +89,7 @@
 		5FF2FC742C72E6FB00917679 /* PurLogConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogConfig.swift; sourceTree = "<group>"; };
 		5FF2FC772C72E78E00917679 /* PurLogEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogEnv.swift; sourceTree = "<group>"; };
 		5FF2FC812C72F89800917679 /* dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dates.swift; sourceTree = "<group>"; };
-		5FF2FC8A2C730D5C00917679 /* package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = package.swift; sourceTree = "<group>"; };
+		5FF2FC8A2C730D5C00917679 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		5FF2FC8C2C73189000917679 /* slather.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = slather.yaml; sourceTree = "<group>"; };
 		5FF2FC952C7332D300917679 /* datesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datesTests.swift; sourceTree = "<group>"; };
 		5FF2FCAC2C73C48600917679 /* PurLogConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurLogConfigTests.swift; sourceTree = "<group>"; };
@@ -186,7 +184,7 @@
 			children = (
 				5FF4012B2C753E4D00E50045 /* PurLog.xctestplan */,
 				5FF2FC8C2C73189000917679 /* slather.yaml */,
-				5FF2FC8A2C730D5C00917679 /* package.swift */,
+				5FF2FC8A2C730D5C00917679 /* Package.swift */,
 				5FF2FC542C72B97900917679 /* PurLog */,
 				5FF2FC602C72B97900917679 /* PurLogTests */,
 				5FF2FCB52C73CE4A00917679 /* KeychainHostTestApp */,
@@ -253,7 +251,6 @@
 		5FF2FC7A2C72E9E900917679 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				5F7A14522C95F220004607D7 /* PurLogProject.swift */,
 				5FF2FC742C72E6FB00917679 /* PurLogConfig.swift */,
 				5F7A168A2C9E7E8F004607D7 /* PurLogDeviceInfo.swift */,
 			);
@@ -465,7 +462,6 @@
 				5F19D8CB2C95660A00565DE9 /* KeychainWrapper.swift in Sources */,
 				5F19D8C92C9564D200565DE9 /* PurLogError.swift in Sources */,
 				5FF2FC752C72E6FB00917679 /* PurLogConfig.swift in Sources */,
-				5F7A14532C95F220004607D7 /* PurLogProject.swift in Sources */,
 				5FF2FC822C72F89800917679 /* dates.swift in Sources */,
 				5F19D8CD2C95742900565DE9 /* jwt.swift in Sources */,
 				5FF2FC712C72BB8A00917679 /* PurLog.swift in Sources */,
