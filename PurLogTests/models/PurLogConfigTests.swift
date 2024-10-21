@@ -31,7 +31,7 @@ internal final class PurLogConfigTests: XCTestCase {
             XCTAssertNil(config.projectId, "projectId should be nil by default")
         }
         
-        func testBuilderInitializationWithCustomValues() {
+    @MainActor func testBuilderInitializationWithCustomValues() {
             // Arrange
             let customLevel = PurLogLevel.ERROR
             let customEnv = PurLogEnv.PROD
