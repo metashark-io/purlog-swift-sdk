@@ -90,6 +90,8 @@ struct PurLogSampleApp: App {
         let jwt = Secrets.projectJWT // The project JWT shouldn't be hardcoded in your project. It should typically be securely passed down from your server environment
         
         let config = PurLogConfig.Builder()
+            .setEnv(.PROD)
+            .setLevel(.VERBOSE)
             .setProject(projectId: projectId, projectJWT: jwt)
             .build()
         

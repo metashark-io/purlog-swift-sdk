@@ -56,4 +56,3 @@ internal class SdkLogger {
         return
     }
 }
-
